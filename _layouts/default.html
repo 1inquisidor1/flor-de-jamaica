@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'es' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ site.description | default: page.description }}">
+  <meta name="theme-color" content="#B71F3E">
+
+  <!-- Open Graph - Redes Sociales -->
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:image" content="{{ site.baseurl }}/assets/images/slider/foto1.jpg">
+  <meta property="og:url" content="{{ site.baseurl }}">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:image" content="{{ site.baseurl }}/assets/images/slider/foto1.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ '/assets/images/iconos/favicon.png' | relative_url }}">
+
+  <!-- Título dinámico -->
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }} - {{ site.tagline }}
+    {% endif %}
+  </title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- SEO Plugin -->
+  {% seo %}
+</head>
+
+<body>
+  <!-- Header y Navegación -->
+  {% include header.html %}
+
+  <!-- Contenido Principal -->
+  <main class="contenido-principal" role="main">
+    {{ content }}
+  </main>
+
+  <!-- Footer -->
+  {% include footer.html %}
+
+  <!-- JavaScript principal (defer para no bloquear carga) -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+
+  <!-- Script para pausa de slider en hover (inline para mejor performance) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializar cualquier componente que necesite JS al cargar
+      console.log('🌺 Flor de Jamaica - Sitio cargado correctamente');
+    });
+  </script>
+</body>
+</html>

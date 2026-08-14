@@ -1,0 +1,32 @@
+# Jekyll generated files
+_site/
+.jekyll-cache/
+.jekyll-metadata
+*.gem
+
+# Bundler
+Gemfile.lock
+.bundle/
+
+# Ruby
+.ruby-version
+.ruby-gemset
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+.env

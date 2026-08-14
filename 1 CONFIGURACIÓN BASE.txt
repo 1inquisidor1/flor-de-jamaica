@@ -1,0 +1,52 @@
+🧱 PARTE 1: CONFIGURACIÓN BASE, REPOSITORIO Y ESTRUCTURA DE CARPETAS
+Objetivo de esta parte: Crear el "esqueleto" del proyecto en GitHub y definir el archivo de configuración maestro para que el sitio sepa cómo comportarse desde el inicio.
+
+Pasos pequeños para la IA:
+
+Crear el repositorio fuente:
+
+Indicar al usuario que cree un repositorio público en GitHub (puede llamarse flor-de-jamaica).
+
+Acceder a la pestaña Settings > Pages de ese repositorio y seleccionar la opción "GitHub Actions" como fuente de despliegue (esto permite que el sitio se construya automáticamente con cada actualización).
+
+Definir el archivo de configuración global (_config.yml):
+
+Crear un archivo en la raíz llamado _config.yml.
+
+Configurar dentro de él:
+
+El título del sitio: "Flor de Jamaica - Elegancia Natural".
+
+La descripción corta: "Descubre la belleza, propiedades y usos de esta flor excepcional".
+
+La URL base (baseurl) debe quedar vacía ("") para que el sitio se sirva correctamente en la URL gratis de GitHub (usuario.github.io/repositorio).
+
+Establecer el idioma a es-ES.
+
+Definir el permalink para los artículos como /:slug/ (aunque no usaremos blog, esto ayuda a que las URLs de las subpáginas sean limpias).
+
+Configurar el markdown para que use kramdown (el procesador nativo de GitHub).
+
+Crear la arquitectura de carpetas raíz (el esqueleto):
+
+Instruir al usuario para que cree las siguientes carpetas vacías en la raíz del repositorio (puede hacerlo desde la web de GitHub o localmente):
+
+_layouts/ (aquí irán las plantillas maestras de las páginas).
+
+_includes/ (aquí irán los fragmentos reutilizables: header, footer, slider).
+
+_posts/ (se dejará vacía por ahora, pero es necesaria para que Jekyll funcione).
+
+assets/ (con sus subcarpetas: css/, js/, e images/).
+
+Generar el archivo de error 404 personalizado:
+
+Crear un archivo 404.html en la raíz.
+
+Su contenido debe ser una página sencilla, con el estilo de la marca (usando la paleta de Jamaica), que contenga un mensaje amigable de "Página no encontrada" y un botón grande que redirija a la página de Inicio.
+
+Primera verificación de infraestructura:
+
+Hacer un git add ., commit y push de esta estructura inicial.
+
+Revisar en GitHub que el repositorio tenga las carpetas creadas y que la acción de Pages (aunque aún sin sitio construido) se haya activado correctamente en la pestaña Actions.

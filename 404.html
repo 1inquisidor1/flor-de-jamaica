@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Página no encontrada | Flor de Jamaica</title>
+  <style>
+    :root {
+      --rojo-profundo: #B71F3E;
+      --crema: #FDF5F0;
+      --dorado: #E8A34B;
+      --verde-hoja: #3D6B4F;
+      --tinta: #1A1412;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--crema) 0%, #f5e6e0 100%);
+      color: var(--tinta);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .contenedor-404 {
+      text-align: center;
+      max-width: 600px;
+      background: white;
+      padding: 60px 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .icono-error {
+      font-size: 80px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      color: var(--rojo-profundo);
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .linea-decorativa {
+      width: 60px;
+      height: 3px;
+      background: var(--rojo-profundo);
+      margin: 20px auto 30px;
+      border-radius: 2px;
+    }
+
+    .subtitulo {
+      font-size: 24px;
+      color: var(--verde-hoja);
+      font-weight: 500;
+      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .botones {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .boton {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .boton-primario {
+      background: var(--rojo-profundo);
+      color: white;
+    }
+
+    .boton-primario:hover {
+      background: #9a1930;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(183, 31, 62, 0.3);
+    }
+
+    .boton-secundario {
+      background: var(--crema);
+      color: var(--rojo-profundo);
+      border: 2px solid var(--rojo-profundo);
+    }
+
+    .boton-secundario:hover {
+      background: var(--rojo-profundo);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .mensaje-adicional {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 2px solid #f0f0f0;
+      font-size: 14px;
+      color: #999;
+    }
+
+    .flor-decorativa {
+      margin-top: 30px;
+      font-size: 60px;
+      opacity: 0.3;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contenedor-404 {
+        padding: 40px 25px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .subtitulo {
+        font-size: 20px;
+      }
+
+      .botones {
+        flex-direction: column;
+      }
+
+      .boton {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor-404">
+    <span class="icono-error">🌺</span>
+
+    <h1>404</h1>
+    <div class="linea-decorativa"></div>
+
+    <p class="subtitulo">Página no encontrada</p>
+
+    <p>
+      Parece que la página que buscas no existe o ha sido movida.
+      La flor de Jamaica es hermosa, pero esta ruta no nos lleva a ella. 🌸
+    </p>
+
+    <div class="botones">
+      <a href="/flor-de-jamaica/" class="boton boton-primario">
+        🏠 Volver al Inicio
+      </a>
+      <a href="/flor-de-jamaica/" class="boton boton-secundario">
+        Explorar el sitio
+      </a>
+    </div>
+
+    <div class="flor-decorativa">🌺</div>
+
+    <div class="mensaje-adicional">
+      Si crees que esto es un error, por favor <a href="mailto:contacto@florajamaica.com" style="color: var(--rojo-profundo); text-decoration: none;">contáctanos</a>.
+    </div>
+  </div>
+</body>
+</html>

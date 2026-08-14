@@ -1,0 +1,115 @@
+PARTE 5: VERIFICACIÓN FINAL, OPTIMIZACIÓN DE RECURSOS Y DESPLIEGUE DEFINITIVO
+Objetivo de esta parte: Revisar todos los detalles técnicos que hacen que una web pase de "funciona" a "es profesional". Optimizaremos las imágenes, probaremos el rendimiento, corregiremos enlaces y haremos el despliegue final en GitHub Pages para que quede disponible al mundo.
+
+Pasos pequeños para la IA (sin código explícito, solo lógica de revisión y preparación):
+
+1. Preparación y optimización de todos los recursos visuales (Imágenes):
+
+Instrucción para el usuario (que la IA debe transmitir claramente):
+
+Todas las imágenes deben estar en formatos modernos y ligeros: WebP es el recomendado (y si es posible, AVIF).
+
+Slider (3 imágenes): Deben tener un tamaño de 1920x800 píxeles (para que se vean nítidas en pantallas grandes) pero con un peso inferior a 200 KB cada una. Usar herramientas como Squoosh.app o ImageOptim para comprimirlas sin perder calidad.
+
+Imágenes internas (para las subpáginas): Como la foto del cáliz o la planta, deben tener un ancho máximo de 1200 px y pesar menos de 100 KB.
+
+Favicon (el icono de la pestaña): Generar un favicon en formato .ico o .png de 64x64 o 32x32 píxeles con un diseño minimalista (un pétalo o una gota de color rojo Jamaica). Colocarlo en assets/images/iconos/favicon.ico y referenciarlo en el <head> del default.html.
+
+Nombrado de archivos: Renombrar todas las imágenes con nombres descriptivos y en minúsculas, usando guiones en lugar de espacios (ej: caliz-jamaica.webp, campo-hibiscus.webp). Esto ayuda al SEO.
+
+2. Verificación de enlaces y rutas relativas (El gran chequeo de "no romper nada"):
+
+Instrucción a la IA:
+
+Revisar que todos los enlaces del menú (Inicio, Apariencia, Composición, Beneficios, Usos) usen la sintaxis correcta para Jekyll: {{ "/" | relative_url }} y {{ "/apariencia/" | relative_url }}.
+
+Atención especial: Dado que la URL será usuario.github.io/repositorio (y no un dominio limpio), la IA debe verificar que el baseurl en _config.yml esté vacío (baseurl: "") o, si se usa, que todos los enlaces a CSS, JS e imágenes incluyan {{ site.baseurl }} delante. Si se deja vacío, es más sencillo y seguro.
+
+Revisar que el enlace del logo (🌺 Jamaica) en el header apunte siempre a la raíz (/).
+
+Asegurar que la página de error 404 tenga un enlace funcional que devuelva al inicio.
+
+3. Pruebas de rendimiento y accesibilidad (El "Lighthouse Score"):
+
+Instrucción para el usuario (que la IA debe detallar):
+
+Abrir la web en el navegador Chrome, pulsar F12 (Herramientas de Desarrollo) e ir a la pestaña Lighthouse (o Audits).
+
+Realizar una auditoría en modo "Mobile" y otra en modo "Desktop".
+
+Objetivos mínimos de puntuación (esto es lo que debe verificar el usuario):
+
+Rendimiento (Performance): Mayor a 85 (gracias a la ligereza del sitio).
+
+Accesibilidad: Mayor a 95 (gracias al contraste de colores y etiquetas ARIA en el menú).
+
+Buenas Prácticas: Mayor a 90.
+
+SEO: 100 (porque todo el contenido está en texto plano y tenemos las metaetiquetas Open Graph).
+
+Si alguna puntuación es baja, revisar el informe y aplicar las sugerencias (ej: si dice "imágenes sin dimensionar", añadir atributos width y height a las imágenes del slider).
+
+4. Pruebas multiplataforma (Responsive visual):
+
+Instrucción para el usuario:
+
+Abrir la web en tres entornos y verificar que nada se salga de la pantalla ni se superponga:
+
+Escritorio: Pantalla de 1920x1080 y de 1366x768.
+
+Tablet: Modo vertical y horizontal (emular iPad en las herramientas de desarrollo).
+
+Móvil: Emular iPhone SE (375x667) y Samsung Galaxy (412x915).
+
+Verificar específicamente:
+
+El menú hamburguesa abre y cierra correctamente.
+
+El submenú "Explorar" se despliega al tocarlo en móvil.
+
+El slider no corta los textos y los botones son fácilmente pulsables con el dedo (mínimo 44px de alto).
+
+5. Limpieza del repositorio y archivos temporales:
+
+Instrucción a la IA:
+
+Verificar que en la raíz del repositorio no existan archivos innecesarios como README.md de ejemplo (si no se quiere), o carpetas vacías que sobren.
+
+Asegurar que el archivo .gitignore (si se usa) excluya carpetas como _site/ (la carpeta donde Jekyll construye el sitio localmente) y .jekyll-cache/ para no subirlas a GitHub, ya que GitHub las genera automáticamente.
+
+Si se usó algún archivo de prueba (como draft.md), eliminarlo para que no se publique por error.
+
+6. El Despliegue Definitivo (Push a GitHub):
+
+Instrucción para el usuario (El paso final y más emocionante):
+
+Hacer un commit final con el mensaje: "Versión 1.0 - Web Flor de Jamaica completa".
+
+Hacer push a la rama main (o master) del repositorio remoto en GitHub.
+
+Ir a la pestaña Actions del repositorio en GitHub. Debe aparecer un flujo de trabajo (workflow) en ejecución (amarillo) que en pocos minutos se pondrá verde (éxito).
+
+Cuando el workflow termine, ir a Settings → Pages del repositorio. Verificar que aparezca el mensaje: "Your site is published at https://tusuario.github.io/mi-repositorio/".
+
+7. El "Corte de Cinta" (Verificación Post-Lanzamiento):
+
+Instrucción para el usuario:
+
+Abrir el enlace proporcionado por GitHub Pages en una ventana de incógnito (para evitar caché antigua).
+
+Navegar por todas las páginas (Inicio, Apariencia, Composición, Beneficios, Usos) y comprobar que el slider se mueve, el menú funciona, y los textos están completos.
+
+Compartir el enlace en un grupo de WhatsApp o Telegram para probar las metaetiquetas Open Graph: debe aparecer la imagen de vista previa, el título y la descripción que configuramos en la Parte 4.
+
+Confirmación final: Dar por finalizado el proyecto y celebrar.
+
+8. Plan de Mantenimiento Mensual (Para cuando actualices contenido):
+
+Instrucción para el usuario (para que la IA lo redacte como un mini-guía):
+
+Cuando quieras actualizar un texto: Edita el archivo .md correspondiente (ej: beneficios.md), modifica el texto, haz commit y push. En 2 minutos estará actualizado.
+
+Cuando quieras cambiar una imagen del slider: Reemplaza las imágenes en assets/images/slider/ y asegúrate de que los nombres de archivo coincidan con los que están escritos en index.md (o en el slider). Si cambias el nombre, edita también la referencia en el archivo de texto. Luego, push.
+
+Cuando quieras añadir una nueva página (más allá de las 4): Copia el formato de apariencia.md (con su layout: page), crea un nuevo archivo en la raíz, edita el menú header.html para añadir un nuevo enlace en el desplegable, y publica.
+

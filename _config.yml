@@ -1,0 +1,55 @@
+# ============================================================================
+# CONFIGURACIÓN GLOBAL - FLOR DE JAMAICA
+# ============================================================================
+# Este archivo controla cómo Jekyll construye el sitio.
+# Documentación: https://jekyllrb.com/docs/configuration/
+
+# --- Identidad del Sitio ---
+title: "Flor de Jamaica - Elegancia Natural"
+tagline: "Descubre la belleza, propiedades y usos de esta flor excepcional"
+description: "Sitio dedicado a la Flor de Jamaica (Hibiscus sabdariffa): su apariencia, composición nutricional, beneficios científicos y usos culinarios y medicinales."
+
+# --- URLs y Rutas ---
+# url: "https://1inquisidor1.github.io"  # Descomenta cuando tengas dominio personalizado
+baseurl: "/flor-de-jamaica"  # Ruta base para GitHub Pages (usuario.github.io/flor-de-jamaica)
+permalink: /:slug/  # URLs limpias: /nombre-pagina/ en lugar de /nombre-pagina.html
+
+# --- Configuración de Idioma y Localización ---
+lang: es-ES
+timezone: America/Mexico_City  # Zona horaria (puedes cambiar según tu ubicación)
+
+# --- Configuración de Jekyll ---
+markdown: kramdown  # Procesador Markdown (nativo de GitHub Pages)
+highlighter: rouge  # Resaltado de sintaxis
+
+# --- Colecciones y Plugins ---
+plugins:
+  - jekyll-feed        # Genera feed RSS automáticamente
+  - jekyll-seo-tag     # Mejora SEO automáticamente
+  - jekyll-sitemap     # Genera sitemap.xml para motores de búsqueda
+
+# --- Exclusiones ---
+exclude:
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .jekyll-cache
+  - _site
+
+# --- Configuración de Build ---
+incremental: true  # Construcción incremental (más rápida)
+future: false      # No publica artículos con fecha futura
+
+# --- Variables de Acceso Global (usa {{ site.nombre_variable }} en templates) ---
+author: "Equipo Flor de Jamaica"
+year: 2026
+social:
+  # Descomenta y completa cuando tengas los canales oficiales
+  # instagram: "https://instagram.com/tu-cuenta"
+  # facebook: "https://facebook.com/tu-cuenta"
+  # email: "tu-email@ejemplo.com"
+
+# --- SEO y Open Graph (para compartir en redes) ---
+og_image: "/flor-de-jamaica/assets/images/slider/foto1.jpg"
+og_type: "website"

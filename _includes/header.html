@@ -1,0 +1,132 @@
+<header class="header" id="header">
+  <div class="header-contenedor">
+
+    <!-- Logo / Nombre del sitio -->
+    <a href="{{ '/' | relative_url }}" class="logo">
+      <span class="logo-emoji">🌺</span>
+      <span class="logo-texto">Jamaica</span>
+    </a>
+
+    <!-- Menú Hamburguesa (visible solo en móvil) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+    <label for="menu-toggle" class="hamburguesa">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Navegación -->
+    <nav class="nav" id="nav">
+      <ul class="nav-lista">
+
+        <!-- Enlace Inicio -->
+        <li class="nav-item">
+          <a href="{{ '/' | relative_url }}" class="nav-enlace">
+            Inicio
+          </a>
+        </li>
+
+        <!-- Menú Explorar (Dropdown en escritorio / Acordeón en móvil) -->
+        <li class="nav-item nav-dropdown" id="nav-dropdown">
+          <button class="nav-enlace nav-enlace-dropdown" id="btn-explorar" aria-expanded="false" aria-haspopup="true">
+            Explorar
+            <svg class="icono-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </button>
+
+          <!-- Submenú Explorar -->
+          <ul class="nav-submenu" id="nav-submenu">
+            <li><a href="{{ '/apariencia/' | relative_url }}" class="nav-subenlace">🌿 Apariencia</a></li>
+            <li><a href="{{ '/composicion/' | relative_url }}" class="nav-subenlace">🧪 Composición</a></li>
+            <li><a href="{{ '/beneficios/' | relative_url }}" class="nav-subenlace">❤️ Beneficios</a></li>
+            <li><a href="{{ '/usos/' | relative_url }}" class="nav-subenlace">🍹 Usos</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- Script para controlar menú y header dinámico -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+    const header = document.getElementById('header');
+    const btnExplorar = document.getElementById('btn-explorar');
+    const navSubmenu = document.getElementById('nav-submenu');
+    const navDropdown = document.getElementById('nav-dropdown');
+    const navEnlaces = document.querySelectorAll('.nav-enlace:not(.nav-enlace-dropdown)');
+
+    // === CONTROL MENÚ HAMBURGUESA ===
+
+    // Cerrar menú cuando se hace clic en un enlace
+    navEnlaces.forEach(function(enlace) {
+      enlace.addEventListener('click', function() {
+        menuToggle.checked = false;
+      });
+    });
+
+    // Cerrar menú cuando se hace clic fuera
+    document.addEventListener('click', function(event) {
+      const esMenuToggle = event.target === menuToggle || menuToggle.contains(event.target);
+      const esNav = nav.contains(event.target);
+      const esHamburguesa = event.target.closest('.hamburguesa');
+
+      if (!esMenuToggle && !esNav && !esHamburguesa && menuToggle.checked) {
+        menuToggle.checked = false;
+      }
+    });
+
+    // === CONTROL ACORDEÓN EXPLORAR (MÓVIL) ===
+
+    btnExplorar.addEventListener('click', function(event) {
+      // Evitar que cierre el menú si estamos en móvil
+      event.preventDefault();
+      event.stopPropagation();
+
+      const isExpanded = btnExplorar.getAttribute('aria-expanded') === 'true';
+      btnExplorar.setAttribute('aria-expanded', !isExpanded);
+      navSubmenu.classList.toggle('submenu-abierto');
+    });
+
+    // Cerrar acordeón al hacer clic en un subenlace
+    document.querySelectorAll('.nav-subenlace').forEach(function(subenlace) {
+      subenlace.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          // En móvil, cierra el acordeón pero mantiene el menú abierto
+          navSubmenu.classList.remove('submenu-abierto');
+          btnExplorar.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // === EFECTO HEADER GLASSMORPHISM AL SCROLL ===
+
+    let ultimoScroll = 0;
+    window.addEventListener('scroll', function() {
+      const currentScroll = window.scrollY;
+
+      // Agregar efecto blur cuando scroll > 80px
+      if (currentScroll > 80) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+
+      ultimoScroll = currentScroll;
+    });
+
+    // === CERRAR SUBMENU AL REDIMENSIONAR A ESCRITORIO ===
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        navSubmenu.classList.remove('submenu-abierto');
+        btnExplorar.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
