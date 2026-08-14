@@ -10,7 +10,7 @@ description: "Descubre la belleza, propiedades y usos de esta flor excepcional"
     
     <!-- Slide 1: Campo con flores -->
     <div class="slide slide-activa">
-      <img src="{{ '/assets/images/slider/florCampos.jpeg' | relative_url }}" alt="Flores de Jamaica en campo" loading="lazy">
+      <img src="{{ '/assets/images/slider/campo-hibiscus.webp' | relative_url }}" alt="Flores de Jamaica en campo" loading="lazy" width="1920" height="800">
       <div class="slide-texto">
         <h1 class="slide-titulo">La flor que cautiva</h1>
         <p class="slide-subtitulo">Belleza natural en su máxima expresión</p>
@@ -19,7 +19,7 @@ description: "Descubre la belleza, propiedades y usos de esta flor excepcional"
 
     <!-- Slide 2: Flor individual close-up -->
     <div class="slide">
-      <img src="{{ '/assets/images/slider/florIndividual.jpeg' | relative_url }}" alt="Flor de Jamaica close-up" loading="lazy">
+      <img src="{{ '/assets/images/slider/flor-hibiscus-jamaica.webp' | relative_url }}" alt="Flor de Jamaica close-up" loading="lazy" width="1920" height="800">
       <div class="slide-texto">
         <h1 class="slide-titulo">Naturaleza en cada pétalo</h1>
         <p class="slide-subtitulo">Descubre su estructura única</p>
@@ -28,7 +28,7 @@ description: "Descubre la belleza, propiedades y usos de esta flor excepcional"
 
     <!-- Slide 3: Bebida (Agua de Jamaica) -->
     <div class="slide">
-      <img src="{{ '/assets/images/slider/JugoJamaica.jpeg' | relative_url }}" alt="Agua de Jamaica en vaso" loading="lazy">
+      <img src="{{ '/assets/images/slider/agua-de-jamaica.webp' | relative_url }}" alt="Agua de Jamaica en vaso" loading="lazy" width="1920" height="800">
       <div class="slide-texto">
         <h1 class="slide-titulo">Tradición y salud</h1>
         <p class="slide-subtitulo">Una bebida milenaria para tu bienestar</p>
@@ -58,9 +58,9 @@ description: "Descubre la belleza, propiedades y usos de esta flor excepcional"
 </section>
 
 <!-- Sección: Tarjetas de Exploración Rápida -->
-<section class="seccion-tarjetas animar-entrada">
+<section class="seccion-tarjetas">
   <div class="contenedor-seccion">
-    <h2>Explora la Flor de Jamaica</h2>
+    <h2 class="animar-entrada">Explora la Flor de Jamaica</h2>
     
     <div class="grid-tarjetas">
       
@@ -108,61 +108,6 @@ description: "Descubre la belleza, propiedades y usos de esta flor excepcional"
   </div>
 </section>
 
-<!-- Script para control del slider -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const slider = document.getElementById('hero-slider');
-    let indiceActual = 0;
-    let intervalo;
+<!-- Nota: La lógica del slider (rotación automática, controles, pausa al
+     hover/touch) se gestiona centralmente en assets/js/main.js (FASE 4). -->
 
-    // Función para mostrar un slide específico
-    function mostrarSlide(indice) {
-      slides.forEach((slide, idx) => {
-        slide.classList.remove('slide-activa');
-        dots[idx].classList.remove('dot-activo');
-      });
-      slides[indice].classList.add('slide-activa');
-      dots[indice].classList.add('dot-activo');
-      indiceActual = indice;
-    }
-
-    // Cambiar al siguiente slide
-    function siguienteSlide() {
-      const siguiente = (indiceActual + 1) % slides.length;
-      mostrarSlide(siguiente);
-    }
-
-    // Iniciar rotación automática
-    function iniciarRotacion() {
-      intervalo = setInterval(siguienteSlide, 4000); // Cambiar cada 4 segundos
-    }
-
-    // Detener rotación
-    function detenerRotacion() {
-      clearInterval(intervalo);
-    }
-
-    // Controles interactivos
-    dots.forEach((dot) => {
-      dot.addEventListener('click', function() {
-        const indice = parseInt(this.getAttribute('data-slide'));
-        mostrarSlide(indice);
-        detenerRotacion();
-        iniciarRotacion();
-      });
-    });
-
-    // Pausar al hover (escritorio)
-    slider.addEventListener('mouseenter', detenerRotacion);
-    slider.addEventListener('mouseleave', iniciarRotacion);
-
-    // Pausar al tocar (móvil)
-    slider.addEventListener('touchstart', detenerRotacion);
-    slider.addEventListener('touchend', iniciarRotacion);
-
-    // Iniciar rotación
-    iniciarRotacion();
-  });
-</script>

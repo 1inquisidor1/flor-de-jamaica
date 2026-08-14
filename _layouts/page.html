@@ -12,31 +12,11 @@ layout: default
 
 <!-- Contenido principal con máximo ancho para legibilidad -->
 <article class="page-contenido">
-  <div class="page-wrapper">
+  <div class="page-wrapper animar-entrada">
     {{ content }}
   </div>
 </article>
 
-<!-- Script para animar entrada de elementos al scroll -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Agregar clase de animación a elementos con class "animar-entrada"
-    const elementos = document.querySelectorAll('h2, .animar-entrada');
+<!-- Nota: La animación de entrada (Intersection Observer) se gestiona
+     centralmente en assets/js/main.js (FASE 4). -->
 
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // Solo animar una vez
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    elementos.forEach(function(elemento) {
-      elemento.classList.add('animar-entrada');
-      observer.observe(elemento);
-    });
-  });
-</script>

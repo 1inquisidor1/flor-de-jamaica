@@ -27,7 +27,7 @@ Los pétalos propiamente dichos miden de **8 a 10 cm de diámetro** y presentan 
 
 ### El Cáliz (La Parte Comestible)
 
-![Cáliz de la Flor de Jamaica]({{ '/assets/images/posts/caliz-jamaica.jpeg' | relative_url }})
+<img src="{{ '/assets/images/posts/caliz-jamaica.webp' | relative_url }}" alt="Cáliz de la Flor de Jamaica" loading="lazy" width="1200" height="800" style="border-radius: 12px; margin: 1.5rem 0;">
 
 Es la estructura que más destaca y la verdadera joya de esta planta:
 
