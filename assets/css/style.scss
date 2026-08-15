@@ -7,10 +7,325 @@
 //
 // ============================================================================
 // 1. VARIABLES GLOBALES Y CONFIGURACIÓN
+// ============================================================================
 
 // Sass color variables for darken operations
 $rojo-profundo: #B71F3E;
 $verde-hoja: #3D6B4F;
 
 // ============================================================================
-// 1. VARIABLES GLOBALES Y CONFIGURACIÓN
+// 2. RESET Y ESTILOS BASE
+// ============================================================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-cuerpo);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--tinta);
+  background-color: var(--blanco);
+  overflow-x: hidden;
+}
+
+// Imágenes responsivas
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Vínculos
+a {
+  color: var(--rojo-profundo);
+  text-decoration: none;
+  transition: color var(--transition-base), opacity var(--transition-base);
+
+  &:hover {
+    color: darken($rojo-profundo, 15%);
+    opacity: 0.9;
+  }
+
+  &:focus {
+    outline: 2px solid var(--rojo-profundo);
+    outline-offset: 2px;
+  }
+}
+
+// ============================================================================
+// 3. BOTONES Y COMPONENTES
+// ============================================================================
+
+// Botón principal
+.boton {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+
+  &.boton-primario {
+    background: var(--rojo-profundo);
+    color: white;
+
+    &:hover {
+      background: #9a1930;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(183, 31, 62, 0.3);
+    }
+  }
+
+  &.boton-secundario {
+    background: var(--crema);
+    color: var(--rojo-profundo);
+    border: 2px solid var(--rojo-profundo);
+
+    &:hover {
+      background: var(--rojo-profundo);
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// ============================================================================
+// 4. HERO SLIDER CON EFECTO DE FADE
+// ============================================================================
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Altura del hero */
+  overflow: hidden;
+  background: var(--gris-claro);
+
+  @media (max-width: 768px) {
+    height: 40vh;
+  }
+}
+
+.slider-contenedor {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Efecto de fade */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.slide-activa {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide-texto {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  color: var(--blanco);
+  text-align: center;
+  z-index: 2;
+  animation: slideTextIn var(--transition-slow) ease-out;
+
+  @media (max-width: 768px) {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
+
+@keyframes slideTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Controles del slider
+.slider-controles {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-sm);
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.dot-activo {
+  background: var(--blanco);
+  width: 16px;
+}
+
+// ============================================================================
+// 5. FONDO GLASSMORPHISM EN HEADER
+// ============================================================================
+
+.header {
+  background: var(--crema);
+  border-bottom: 2px solid var(--rojo-profundo);
+  padding: var(--spacing-sm) 0;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  transition: all var(--transition-base);
+
+  &.header-scrolled {
+    background: rgba(253, 245, 240, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+// ============================================================================
+// 6. RESTO DE ESTILOS (footer, tarjetas, etc.)
+// ============================================================================
+
+.footer {
+  background: linear-gradient(135deg, var(--verde-hoja) 0%, darken($verde-hoja, 10%) 100%);
+  color: var(--blanco);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+}
+
+// Tarjetas
+.tarjeta {
+  background: var(--blanco);
+  border: 1px solid var(--gris-medio);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--rojo-profundo);
+
+    .tarjeta-icono {
+      transform: scale(1.15) rotate(-5deg);
+    }
+  }
+}
+
+.tarjeta-icono {
+  font-size: var(--font-size-5xl);
+  transition: transform var(--transition-base);
+}
+
+.tarjeta-titulo {
+  color: var(--tinta);
+  font-family: var(--font-titulo);
+  font-size: var(--font-size-xl);
+  margin: 0;
+}
+
+// ============================================================================
+// 7. ACCESIBILIDAD Y UTILIDAD
+// ============================================================================
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--rojo-profundo);
+  color: var(--blanco);
+  padding: var(--spacing-sm);
+  z-index: var(--z-modal);
+
+  &:focus {
+    top: 0;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// ============================================================================
+// 8. IMPRESIÓN
+// ============================================================================
+
+@media print {
+  .header,
+  .footer,
+  .slider-controles {
+    display: none;
+  }
+
+  body {
+    background: var(--blanco);
+    color: var(--negro);
+  }
+
+  a {
+    color: var(--negro);
+  }
+}
