@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://1inquisidor1.github.io/flor-de-jamaica/sitemap.xml
+Sitemap: /sitemap.xml

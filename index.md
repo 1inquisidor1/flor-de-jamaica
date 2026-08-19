@@ -10,7 +10,7 @@ description: "Descubre la belleza, propiedades y usos de esta flor excepcional"
     
     <!-- Slide 1: Campo con flores -->
     <div class="slide slide-activa">
-      <img src="{{ '/assets/images/slider/campo-hibiscus.webp' | relative_url }}" alt="Flores de Jamaica en campo" loading="lazy" width="1920" height="800">
+      <img src="{{ '/assets/images/slider/campo-hibiscus.webp' | relative_url }}" alt="Flores de Jamaica en campo" width="1920" height="800">
       <div class="slide-texto">
         <h1 class="slide-titulo">La flor que cautiva</h1>
         <p class="slide-subtitulo">Belleza natural en su máxima expresión</p>
