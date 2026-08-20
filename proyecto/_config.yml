@@ -10,8 +10,8 @@ tagline: "Descubre la belleza, propiedades y usos de esta flor excepcional"
 description: "Sitio dedicado a la Flor de Jamaica (Hibiscus sabdariffa): su apariencia, composición nutricional, beneficios científicos y usos culinarios y medicinales."
 
 # --- URLs y Rutas ---
-url: ""  # URL base para Netlify
-baseurl: ""  # Ruta base para Netlify (sitio en raíz del dominio)
+url: ""  # URL base (la inyecta GitHub Pages en el deploy)
+baseurl: ""  # Ruta base; el workflow de GitHub Pages la inyecta al construir desde proyecto/
 permalink: /:slug/  # URLs limpias: /nombre-pagina/ en lugar de /nombre-pagina.html
 
 # --- Configuración de Idioma y Localización ---

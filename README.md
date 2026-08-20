@@ -66,6 +66,19 @@ El sitio quedará disponible en `http://localhost:4000/`.
 - **Cambiar una imagen del slider:** reemplaza el archivo en `proyecto/assets/images/slider/` manteniendo el mismo nombre (o actualiza la referencia en `proyecto/index.md` si cambias el nombre). Usa WebP, 1920×800px, menos de 200KB.
 - **Añadir una nueva subpágina:** copia el front matter de `proyecto/apariencia.md` (`layout: page`), crea el archivo `.md` en `proyecto/`, y añade el enlace correspondiente en `proyecto/_includes/header.html`.
 
+## Despliegue (GitHub Pages)
+
+El sitio se publica automáticamente en GitHub Pages mediante GitHub Actions
+(`.github/workflows/deploy.yml`). Cada push a `main` reconstruye el sitio desde
+la carpeta `proyecto/` y lo publica en `https://1inquisidor1.github.io/flor-de-jamaica/`.
+
+Habilitarlo (una sola vez) en el repo de GitHub:
+**Settings → Pages → Build and deployment → Source: "GitHub Actions"**.
+
+La carpeta del sitio es `proyecto/`, así que el workflow construye con
+`bundle exec jekyll build` dentro de `proyecto/` y sube `proyecto/_site`.
+No se usa Netlify.
+
 ## Licencia
 
 Contenido educativo/informativo sobre la Flor de Jamaica. Uso libre con atribución.
