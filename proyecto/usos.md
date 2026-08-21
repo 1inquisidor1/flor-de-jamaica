@@ -10,7 +10,7 @@ Su versatilidad hace que la Flor de Jamaica sea un ingrediente valioso en múlti
 
 ### Agua de Jamaica
 
-La aplicación culinaria más icónica. **El agua de Jamaica** es una bebida refrescante, típicamente servida fría, que se prepara infusionando los cálices secos en agua caliente.
+La aplicación culinaria más icónica. <strong>El agua de Jamaica</strong> es una bebida refrescante, típicamente servida fría, que se prepara <span data-glossary="infusion">infusionando</span> los cálices secos en agua caliente.
 
 **Características:**
 - Sabor: Ácido, refrescante, ligeramente astringente

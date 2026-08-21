@@ -15,7 +15,7 @@ Lejos de ser solo una tradición ancestral, múltiples estudios científicos han
 Este efecto se atribuye a:
 
 - **Capacidad vasodilatadora:** Relaja los vasos sanguíneos, reduciendo la resistencia al flujo
-- **Efecto diurético:** Favorece la eliminación de líquidos y sodio
+- **Efecto <span data-glossary="diuretico">diurético</span>:** Favorece la eliminación de líquidos y sodio
 - **Inhibición de la ACE:** Actúa de forma similar a ciertos medicamentos antihipertensivos
 
 ### Respaldo Científico
@@ -26,7 +26,7 @@ Algunos estudios sugieren que su efecto podría ser similar al de ciertos medica
 
 ## 2. Poder Antioxidante y Protección Cardiovascular
 
-**Gracias a su riqueza en compuestos fenólicos y antocianinas**, la flor de Jamaica combate el **estrés oxidativo**, lo que la hace útil para:
+**Gracias a su riqueza en <span data-glossary="antocianina">antocianinas</span> y compuestos fenólicos**, la flor de Jamaica combate el <span data-glossary="estrés-oxidativo">estrés oxidativo**, lo que la hace útil para:
 
 - **Disminuir el riesgo de enfermedades cardiovasculares**
 - **Reducir los niveles de colesterol "malo" (LDL)**

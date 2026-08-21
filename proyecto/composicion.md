@@ -33,11 +33,11 @@ La presencia de **vitamina C** (ácido ascórbico) aporta un **20% de la IDR** p
 
 ---
 
-## Compuestos Bioactivos: El Motor de sus Efectos
+## Composición Química: El Motor de sus Efectos
 
 La ciencia atribuye sus propiedades terapéuticas a la presencia de potentes compuestos bioactivos:
 
-### Antocianinas
+### <span data-glossary="antocianina">Antocianinas</span>
 
 Son los pigmentos responsables de su **intenso color rojo**. Las antocianinas poseen un potente **efecto antioxidante** que:
 
@@ -65,7 +65,7 @@ Estos compuestos potencian los efectos beneficiosos de la flor:
 Se han identificado también:
 
 - **Polifenoles:** Con capacidad antioxidante superior
-- **Taninos:** Con propiedades astringentes y antimicrobianas
+- **Taninos:** Con propiedades astringentes y antimicrobianas (<span data-glossary="astringente">astringentes</span>).
 - **Alcaloides:** En menor proporción pero con efectos fisiológicos relevantes
 
 ---
