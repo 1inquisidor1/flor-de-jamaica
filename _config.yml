@@ -29,11 +29,13 @@ plugins:
   - jekyll-sitemap     # Genera sitemap.xml para motores de búsqueda
 
 # --- Exclusiones ---
+# Archivos que están en el repositorio (para GitHub) pero NO generan
+# páginas en el sitio web de Jekyll/GitHub Pages
 exclude:
   - .gitignore
   - Gemfile
   - Gemfile.lock
-  - INSTRUCCIONES.md
+  - README.md           # Guía del repositorio (no es parte del sitio web)
   - AUDITORIA-PROBLEMAS.md
   - LLUVIA-IDEA-CONTENIDO.md
   - IDEA.md
