@@ -10,8 +10,8 @@ tagline: "Descubre la belleza, propiedades y usos de esta flor excepcional"
 description: "Sitio dedicado a la Flor de Jamaica (Hibiscus sabdariffa): su apariencia, composición nutricional, beneficios científicos y usos culinarios y medicinales."
 
 # --- URLs y Rutas ---
-url: ""  # URL base (la inyecta GitHub Pages en el deploy)
-baseurl: ""  # Ruta base; el workflow de GitHub Pages la inyecta al construir desde proyecto/
+url: ""  
+baseurl: ""  
 permalink: /:slug/  # URLs limpias: /nombre-pagina/ en lugar de /nombre-pagina.html
 
 # --- Configuración de Idioma y Localización ---
@@ -33,9 +33,14 @@ exclude:
   - .gitignore
   - Gemfile
   - Gemfile.lock
-  - README.md
+  - INSTRUCCIONES.md
+  - AUDITORIA-PROBLEMAS.md
+  - LLUVIA-IDEA-CONTENIDO.md
+  - IDEA.md
+  - .claude
   - .jekyll-cache
   - _site
+  - assets/docs/generar_pdfs.py
 
 # --- Configuración de Build ---
 incremental: true  # Construcción incremental (más rápida)

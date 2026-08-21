@@ -1,0 +1,2 @@
+# .nojekyll
+# Forzar a GitHub Pages a usar el output de Jekyll sin omitir carpetas con guión bajo
