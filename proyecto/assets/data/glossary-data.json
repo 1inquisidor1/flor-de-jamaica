@@ -1,0 +1,124 @@
+{
+  "categories": [
+    {
+      "id": "botanica",
+      "name": "Botánica",
+      "terms": [
+        {
+          "id": "caliz",
+          "term": "Cáliz",
+          "definition": "Estructura carnosa que rodea la flor y que en la Flor de Jamaica se torna rojo intenso al madurar. Es la parte comestible de la planta.",
+          "example": "El cáliz de la Jamaica se usa para preparar el agua de Jamaica tradicional."
+        },
+        {
+          "id": "hibiscus-sabdariffa",
+          "term": "Hibiscus sabdariffa",
+          "definition": "Nombre científico de la Flor de Jamaica. Planta herbácea de la familia Malvaceae, originaria de África Occidental.",
+          "example": "La Hibiscus sabdariffa se cultiva en climas cálidos y secos."
+        },
+        {
+          "id": "antocianina",
+          "term": "Antocianina",
+          "definition": "Pigmento natural responsable del color rojo intenso de la Jamaica. Tiene propiedades antioxidantes potentes.",
+          "example": "Las antocianinas también se encuentran en el arándano y la remolacha."
+        },
+        {
+          "id": "polinizacion",
+          "term": "Polinización",
+          "definition": "Proceso mediante el cual las flores de la planta son fertilizadas. La Jamaica requiere polinización para producir el cáliz comestible.",
+          "example": "Las abejas son principales polinizadores de la Flor de Jamaica."
+        }
+      ]
+    },
+    {
+      "id": "nutricion",
+      "name": "Nutrición",
+      "terms": [
+        {
+          "id": "calcio",
+          "term": "Calcio",
+          "definition": "Mineral esencial para la salud ósea y el funcionamiento muscular. La Jamaica contiene 215mg por 100g.",
+          "example": "El calcio también se encuentra en la leche y las verduras de hoja verde."
+        },
+        {
+          "id": "potasio",
+          "term": "Potasio",
+          "definition": "Electrolito que ayuda a regular la presión arterial. La Jamaica aporta 208mg por cada 100g.",
+          "example": "El plátano es otra fuente rica en potasio."
+        },
+        {
+          "id": "vitamina-c",
+          "term": "Vitamina C",
+          "definition": "Antioxidante que fortalece el sistema inmunológico. La Jamaica contiene 12mg por 100g.",
+          "example": "La naranja es conocida por su alto contenido de vitamina C."
+        },
+        {
+          "id": "tanino",
+          "term": "Tanino",
+          "definition": "Compuestos fenólicos con propiedades astringentes y antimicrobianas. Los cálices de Jamaica contienen taninos.",
+          "example": "Los taninos también están presentes en el té negro y el vino tinto."
+        }
+      ]
+    },
+    {
+      "id": "salud",
+      "name": "Salud",
+      "terms": [
+        {
+          "id": "antioxidante",
+          "term": "Antioxidante",
+          "definition": "Sustancia que neutraliza radicales libres, protegiendo las células del envejecimiento prematuro y enfermedades.",
+          "example": "Las antocianinas de la Jamaica son antioxidantes naturales potentes."
+        },
+        {
+          "id": "diuretico",
+          "term": "Diurético",
+          "definition": "Sustancia que estimula la producción de orina, ayudando a eliminar líquidos y toxinas del cuerpo.",
+          "example": "La Jamaica natural tiene efecto diurético suave, ideal para la desintoxicación."
+        },
+        {
+          "id": "vasodilatador",
+          "term": "Vasodilatador",
+          "definition": "Sustancia que relaja los vasos sanguíneos, reduciendo la presión arterial.",
+          "example": "El ácido rosamínico en la Jamaica actúa como vasodilatador natural."
+        },
+        {
+          "id": "estrés-oxidativo",
+          "term": "Estrés oxidativo",
+          "definition": "Daño celular causado por radicales libres. Los antioxidantes como los de la Jamaica lo combaten.",
+          "example": "El estrés oxidativo está relacionado con el envejecimiento prematuro."
+        }
+      ]
+    },
+    {
+      "id": "gastronomia",
+      "name": "Gastronomía",
+      "terms": [
+        {
+          "id": "infusion",
+          "term": "Infusión",
+          "definition": "Preparación de bebidas calientes o frías mediante la extracción de compuestos de plantas con agua.",
+          "example": "El agua de Jamaica es una infusión popular en toda América Latina."
+        },
+        {
+          "id": "astringente",
+          "term": "Astringente",
+          "definition": "Sustancia que produce una sensación de contracción en los tejidos, como la piel de la boca.",
+          "example": "La Jamaica tiene un sabor ligeramente astringente debido a sus taninos."
+        },
+        {
+          "id": "colorante-natural",
+          "term": "Colorante natural",
+          "definition": "Pigmento natural extraído de plantas, frutas o vegetales para dar color a alimentos y bebidas.",
+          "example": "La Jamaica se usa como colorante natural en bebidas y postres."
+        },
+        {
+          "id": "sabor-organoleptico",
+          "term": "Sabor organoléptico",
+          "definition": "Evaluación del gusto, aroma y textura de un alimento. La Jamaica aporta sabor ácido y refrescante.",
+          "example": "El sabor organoléptico de la Jamaica varía según el método de preparación."
+        }
+      ]
+    }
+  ]
+}
