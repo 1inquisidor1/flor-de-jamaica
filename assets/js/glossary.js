@@ -30,6 +30,15 @@
 
   // Inicialización
   function initGlossary() {
+    // Primero verificar si los datos están inyectados directamente en el HTML
+    if (window.GLOSSARY_DATA) {
+      glossaryData = window.GLOSSARY_DATA;
+      initTooltips();
+      initGlossaryPage();
+      return;
+    }
+
+    // Fallback: cargar desde JSON si no están inyectados
     fetch(GLOSSARY_DATA_URL)
       .then(function(response) {
         if (!response.ok) {

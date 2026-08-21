@@ -44,6 +44,12 @@ exclude:
   - _site
   - assets/docs/generar_pdfs.py
 
+# Mantener archivos JSON en el output (no son excluidos por defecto)
+keep_files:
+  - assets/data/glossary-data.json
+  - assets/data/recetas-data.json
+  - assets/data/faq-data.json
+
 # --- Configuración de Build ---
 incremental: true  # Construcción incremental (más rápida)
 future: false      # No publica artículos con fecha futura

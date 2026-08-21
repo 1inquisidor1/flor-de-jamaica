@@ -238,6 +238,46 @@
   <!-- JavaScript principal -->
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
   
+  <!-- Inyectar datos del glosario como variable global para evitar problemas de fetch() -->
+  <script>
+    window.GLOSSARY_DATA = {
+      categories: [
+        {
+          id: 'botanica',
+          name: 'Botánica',
+          terms: [
+            { id: 'caliz', term: 'Cáliz', definition: 'Estructura carnosa que envuelve los órganos reproductivos de una flor. En la Jamaica, el cáliz es lo que se seca y se consume.', example: 'El cáliz de la flor de Jamaica es de color rojo intenso.' },
+            { id: 'hibiscus-sabdariffa', term: 'Hibiscus sabdariffa', definition: 'Nombre científico de la Flor de Jamaica. Planta herbácea perenne de la familia Malvaceae.', example: 'Hibiscus sabdariffa es conocida como Jamaica en México.' }
+          ]
+        },
+        {
+          id: 'nutricion',
+          name: 'Nutrición',
+          terms: [
+            { id: 'calcio', term: 'Calcio', definition: 'Mineral esencial para la formación y mantenimiento de huesos y dientes. La Jamaica aporta aproximadamente 23mg por taza.', example: 'Una taza de agua de Jamaica aporta el 2% del calcio diario necesario.' },
+            { id: 'potasio', term: 'Potasio', definition: 'Electrolito que regula la presión arterial y el equilibrio hídrico. La Jamaica contiene 35mg por taza.', example: 'El potasio ayuda a contrarrestar los efectos del sodio.' }
+          ]
+        },
+        {
+          id: 'salud',
+          name: 'Salud',
+          terms: [
+            { id: 'antioxidante', term: 'Antioxidante', definition: 'Compuesto que neutraliza radicales libres, protegiendo las células del daño oxidativo. Las antocianinas de la Jamaica son potentes antioxidantes.', example: 'La Jamaica tiene 3x más poder antioxidante que el té verde.' },
+            { id: 'diuretico', term: 'Diurético', definition: 'Sustancia que aumenta la producción de orina para eliminar líquidos y toxinas del cuerpo.', example: 'El té de Jamaica tiene efecto diurético suave y natural.' }
+          ]
+        },
+        {
+          id: 'gastronomia',
+          name: 'Gastronomía',
+          terms: [
+            { id: 'infusion', term: 'Infusión', definition: 'Proceso de extraer compuestos vegetales usando agua caliente. Para agua de Jamaica, hierve 1 taza de flores en 4 tazas de agua.', example: 'Deja infusionar 5-7 minutos para un color rojo intenso.' },
+            { id: 'astringente', term: 'Astringente', definition: 'Sustancia que contrae tejidos y reduce la producción de saliva. Las taninas en la Jamaica aportan este efecto.', example: 'El sabor astringente de la Jamaica se suaviza con azúcar.' }
+          ]
+        }
+      ]
+    };
+  </script>
+  
   <!-- JavaScript del Glosario (tooltips interactivos) -->
   <script src="{{ '/assets/js/glossary.js' | relative_url }}"></script>
   
