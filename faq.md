@@ -40,10 +40,10 @@ image: /assets/images/slider/campo-hibiscus.webp
     <!-- Filtros por categoría -->
     <div class="faq-categories-bar">
       <button class="faq-category-btn active" data-category="all">Todas las categorías</button>
-      <button class="faq-category-btn" data-category="producto">🛒 Producto y Compra</button>
+      <button class="faq-category-btn" data-category="producto">Producto y Compra</button>
       <button class="faq-category-btn" data-category="recetas">Recetas y Preparación</button>
-      <button class="faq-category-btn" data-category="salud">🩺 Salud y Beneficios</button>
-      <button class="faq-category-btn" data-category="gastronomia">🍽️ Gastronomía y Usos</button>
+      <button class="faq-category-btn" data-category="salud">Salud y Beneficios</button>
+      <button class="faq-category-btn" data-category="gastronomia">Gastronomía y Usos</button>
     </div>
 
     <!-- Contenedor de FAQs -->

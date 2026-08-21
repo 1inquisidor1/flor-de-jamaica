@@ -60,7 +60,7 @@ categories: recetas
 
 ---
 
-## 🛒 ¿Quieres la mejor Flor de Jamaica para tus recetas?
+## ¿Quieres la mejor Flor de Jamaica para tus recetas?
 
 Encuentra nuestro producto en [nuestros puntos de venta](/donde-comprar/) o pide directamente por [WhatsApp](https://wa.me/5215551234567).
 

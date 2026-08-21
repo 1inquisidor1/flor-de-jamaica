@@ -60,7 +60,7 @@ Descarga nuestro **catálogo completo** con información detallada sobre nutrien
 
 ---
 
-## 🛒 Encuentra nuestra Flor de Jamaica natural
+## Encuentra nuestra Flor de Jamaica natural
 
 Disponible en [nuestros puntos de venta](/donde-comprar/) o pide por [WhatsApp](https://wa.me/5215551234567).
 
