@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --rojo-profundo: #B71F3E;
   --verde-hoja: #3D6B4F;
@@ -1038,4 +1039,111 @@ form button[type=submit] {
 
 .popup-contenido .popup-imagen {
   animation: fadeInUpPopup 0.5s ease-out 0.1s both;
+}
+
+.grid-testimonios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.testimonio {
+  background: var(--blanco);
+  border: 1px solid var(--gris-medio);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+.testimonio:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--rojo-profundo);
+}
+.testimonio:before {
+  content: "„";
+  font-family: var(--font-titulo);
+  font-size: 64px;
+  color: var(--gris-claro);
+  position: absolute;
+  top: -20px;
+  left: 12px;
+  line-height: 1;
+}
+
+.testimonio-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.testimonio-avatar {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  background: var(--crema);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.testimonio-info h4 {
+  font-family: var(--font-titulo);
+  font-size: 16px;
+  color: var(--rojo-profundo);
+  margin: 0;
+}
+
+.testimonio-ubicacion {
+  font-size: 13px;
+  color: #888;
+}
+
+.testimonio-rating {
+  margin-left: auto;
+  color: #FFD700;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.testimonio-texto {
+  font-style: italic;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.testimonio-tipo {
+  font-size: 12px;
+  color: #999;
+  font-style: normal;
+  text-align: right;
+  font-style: italic;
+}
+
+.aviso-testimonios {
+  background: var(--crema);
+  border-left: 4px solid var(--verde-hoja);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin: var(--spacing-xl) 0;
+}
+.aviso-testimonios p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: var(--spacing-sm);
+}
+.aviso-testimonios p strong {
+  color: var(--rojo-profundo);
+}
+
+.cta-compra .boton {
+  min-width: 160px;
 }
