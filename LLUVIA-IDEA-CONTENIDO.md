@@ -99,7 +99,7 @@ Artículos que posicionan el producto indirectamente:
 
 ---
 
-## ️ Próximas Etapas (Pendientes)
+## Próximas Etapas (Pendientes)
 
 1. **Más artículos de blog avanzados** — Serie sobre ciencia de los antioxidantes
 2. **Infografía visual** — "Ciclo de la Jamaica: planta a vaso"

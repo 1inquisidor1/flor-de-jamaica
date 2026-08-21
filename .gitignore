@@ -29,3 +29,6 @@ yarn.lock
 *.bak
 *.swp
 .env
+
+# Hermes internal (no part of the website)
+skills/
