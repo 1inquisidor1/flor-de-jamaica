@@ -1,10 +1,10 @@
-# 🔍 Auditoría de Problemas — Flor de Jamaica
+#  Auditoría de Problemas — Flor de Jamaica
 
 Fecha: 2026-08-14 · Alcance: código completo del repositorio (Jekyll + CSS + JS) comparado contra prácticas estándar de sitios web modernos (Lighthouse, WCAG, patrones de sitios de producto/contenido similares).
 
 ---
 
-## 🔴 CRÍTICOS (rompen funcionalidad o construcción del sitio)
+##  CRÍTICOS (rompen funcionalidad o construcción del sitio)
 
 ### 1. `index.md` declara `layout: home` pero ese layout **no existe**
 Solo existen `_layouts/default.html` y `_layouts/page.html`. Nunca se creó `_layouts/home.html`.
@@ -23,7 +23,7 @@ Un archivo `.scss` necesita como mínimo:
 ```
 al inicio para que Jekyll lo reconozca y lo compile a CSS.
 
-**Efecto real:** sin ese front matter, Jekyll trata el archivo como un asset estático y lo copia tal cual (`style.scss`), **nunca genera `style.css`**. El `<link rel="stylesheet" href=".../style.css">` en `default.html` apunta a un archivo que no existe → **el sitio se ve sin ningún estilo aplicado** (HTML plano).
+**Efecto real:** sin ese front matter, Jekyll trata el archivo como un asset estático y lo copia tal cual (`style.scss`), **nunca genera `style.css`**. El `<link rel="stylesheet" href=".../style.css">` en `default.html` apunta a un archivo que no existe  **el sitio se ve sin ningún estilo aplicado** (HTML plano).
 
 ---
 
@@ -62,7 +62,7 @@ Aparece en `.menu-toggle` y `.hamburguesa`.
 
 ---
 
-## 🟠 IMPORTANTES (afectan rendimiento, accesibilidad o SEO)
+##  IMPORTANTES (afectan rendimiento, accesibilidad o SEO)
 
 ### 6. Las 3 imágenes del slider usan `loading="lazy"`, incluida la primera (visible de inmediato)
 La imagen que se ve al cargar la página (el LCP — *Largest Contentful Paint*) **nunca debe llevar `lazy`**, porque retrasa su descarga y penaliza el puntaje de Performance en Lighthouse. Solo las imágenes 2 y 3 (fuera de la vista inicial) deberían ser lazy.
@@ -87,7 +87,7 @@ En iOS, al guardar el sitio en pantalla de inicio, se usará un ícono genérico
 
 ---
 
-## 🟡 MEJORAS (comparado con sitios de referencia similares — blogs de salud/producto natural, ej. Traditional Medicinals, Numi Tea, AeroPress)
+##  MEJORAS (comparado con sitios de referencia similares — blogs de salud/producto natural, ej. Traditional Medicinals, Numi Tea, AeroPress)
 
 | # | Observación | Por qué importa |
 |---|---|---|
@@ -96,13 +96,13 @@ En iOS, al guardar el sitio en pantalla de inicio, se usará un ícono genérico
 | 15 | El footer tiene enlaces `href="#"` a redes sociales (aún sin canales reales) | Visualmente puede parecer un enlace roto a un visitante nuevo — considera ocultarlos hasta tener las URLs reales |
 | 16 | No hay "breadcrumbs" (Inicio › Apariencia) en las subpáginas | Común en sitios de contenido informativo/educativo, ayuda a la navegación y al SEO |
 | 17 | No hay botones de compartir en las subpáginas | Sitios de salud/nutrición similares casi siempre incluyen compartir en redes al final del artículo |
-| 18 | El "logo" es solo texto con emoji (🌺 Jamaica) | Funcional, pero se ve amateur frente a sitios con logotipo gráfico diseñado |
+| 18 | El "logo" es solo texto con emoji ( Jamaica) | Funcional, pero se ve amateur frente a sitios con logotipo gráfico diseñado |
 | 19 | No hay modo oscuro (ni siquiera respetando `prefers-color-scheme`) | Cada vez más esperado como estándar en sitios de 2026 |
 | 20 | Solo se generó WebP, no AVIF | La Fase 5 original sugería AVIF como el formato ideal (mejor compresión), quedó pendiente |
 
 ---
 
-## ✅ Resumen por prioridad de arreglo
+##  Resumen por prioridad de arreglo
 
 1. **Ahora mismo (rompen el sitio):** #1, #2, #3, #4, #5
 2. **Pronto (rendimiento/accesibilidad):** #6, #7, #8, #9, #10, #11, #12

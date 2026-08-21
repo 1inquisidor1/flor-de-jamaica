@@ -7,7 +7,7 @@
 
 ---
 
-### 🥤 1. Agua de Jamaica Clásica
+###  1. Agua de Jamaica Clásica
 
 **Ingredientes**:
 - 1 taza de cálices de Flor de Jamaica
@@ -23,7 +23,7 @@
 
 ---
 
-### 🍵 2. Té de Jamaica Frío
+###  2. Té de Jamaica Frío
 
 **Ingredientes**:
 - 1 bolsa de té negro
@@ -38,7 +38,7 @@
 
 ---
 
-### 🍓 3. Smoothie Detox de Jamaica
+###  3. Smoothie Detox de Jamaica
 
 **Ingredientes**:
 - ½ taza de cálices de Jamaica hidratados
@@ -52,7 +52,7 @@
 
 ---
 
-### 🍰 4. Mermelada de Jamaica
+###  4. Mermelada de Jamaica
 
 **Ingredientes**:
 - 2 tazas de cálices de Jamaica
@@ -66,7 +66,7 @@
 
 ---
 
-### 🍸 5. Cóctel Cosmopolita de Jamaica
+###  5. Cóctel Cosmopolita de Jamaica
 
 **Ingredientes**:
 - 1 taza de agua de Jamaica preparada
@@ -80,7 +80,7 @@
 
 ---
 
-### 🍮 6. Panna Cotta de Jamaica
+###  6. Panna Cotta de Jamaica
 
 **Ingredientes**:
 - 2 tazas de crema para batir
@@ -96,7 +96,7 @@
 
 ---
 
-### 🍫 7. Brownie Vegano con Jamaica
+###  7. Brownie Vegano con Jamaica
 
 **Ingredientes**:
 - 1 taza de harina integral
@@ -112,7 +112,7 @@
 
 ---
 
-### 🍹 8. Gaseosa Natural de Jamaica
+###  8. Gaseosa Natural de Jamaica
 
 **Ingredientes**:
 - 1 taza de cálices de Jamaica
@@ -127,7 +127,7 @@
 
 ---
 
-### 🧖 9. Mascarilla Facial con Jamaica
+###  9. Mascarilla Facial con Jamaica
 
 **Ingredientes**:
 - 2 cucharadas de cálices de Jamaica molidos
@@ -141,7 +141,7 @@
 
 ---
 
-### 🫖 10. Infusión Relajante Nocturna
+###  10. Infusión Relajante Nocturna
 
 **Ingredientes**:
 - 1 taza de cálices de Jamaica
@@ -155,11 +155,11 @@
 
 ---
 
-### 💡 Consejo Extra:
+###  Consejo Extra:
 Para intensificar el sabor, añade un poco de canela o clavo a cualquier preparación.
 
 ---
 
-📲 ¿Quieres más recetas o información sobre nuestros productos?
+ ¿Quieres más recetas o información sobre nuestros productos?
 Visítanos en [www.flor-de-jamaica.com](http://www.flor-de-jamaica.com)  
-📧 contacto@flordejamaica.com
+ contacto@flordejamaica.com

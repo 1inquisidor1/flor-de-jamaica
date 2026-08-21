@@ -13,7 +13,7 @@ categories: beneficios salud
 
 <hr>
 
-## 🧬 ¿Qué dice la ciencia?
+## ¿Qué dice la ciencia?
 
 Múltiples investigaciones han confirmado que la Flor de Jamaica (*Hibiscus sabdariffa*) contiene:
 

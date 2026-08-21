@@ -13,7 +13,7 @@ categories: recetas
 
 <hr>
 
-## 🥄 Ingredientes
+## Ingredientes
 
 | Ingrediente | Cantidad |
 |------------|----------|

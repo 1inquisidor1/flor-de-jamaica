@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 Objetivo Comercial (Actualizado)
+##  Objetivo Comercial (Actualizado)
 Convertir el sitio web estático en un **showroom digital de confianza** que:
 1. Posicione la **Flor de Jamaica como producto premium y confiable**.
 2. Eduque al usuario (inspirado en divulgación científica).
@@ -13,7 +13,7 @@ Convertir el sitio web estático en un **showroom digital de confianza** que:
 
 ---
 
-## 🔬 Inspiración por Tipo de Sitio
+##  Inspiración por Tipo de Sitio
 
 | Tipo de Sitio | Uso en el Proyecto |
 |---|---|
@@ -25,9 +25,9 @@ Convertir el sitio web estático en un **showroom digital de confianza** que:
 
 ---
 
-## 📚 Mejoras Comerciales Implementadas
+##  Mejoras Comerciales Implementadas
 
-### ✅ FASE 1: Web como Showroom (COMPLETADA)
+###  FASE 1: Web como Showroom (COMPLETADA)
 
 #### 1. **Nueva página: `/donde-comprar/`**
 - Lista de tiendas físicas simuladas
@@ -41,8 +41,8 @@ Convertir el sitio web estático en un **showroom digital de confianza** que:
 - Lead magnets: catálogo PDF y recetario gratuito
 
 #### 3. **Lead Magnets generados**
-- ✅ `catalogo-flor-de-jamaica.pdf` — catálogo de productos
-- ✅ `recetario-jamaica.pdf` — 10 recetas exclusivas
+-  `catalogo-flor-de-jamaica.pdf` — catálogo de productos
+-  `recetario-jamaica.pdf` — 10 recetas exclusivas
 
 #### 4. **Blog científico-comercial** (nueva sección `/blog/`)
 Artículos que posicionan el producto indirectamente:
@@ -52,7 +52,7 @@ Artículos que posicionan el producto indirectamente:
 - `identificar-jamaica-autentica.md` — guía de identificación con tabla comparativa
 
 #### 5. **CTA principal en homepage**
-- Sección destacada: "¿Quieres probar la diferencia?" → enlaza a `/donde-comprar/`
+- Sección destacada: "¿Quieres probar la diferencia?"  enlaza a `/donde-comprar/`
 
 #### 6. **Header y Footer actualizados**
 - Enlaces a: Inicio, Explorar, Dónde Comprar, Blog, Contacto
@@ -60,7 +60,7 @@ Artículos que posicionan el producto indirectamente:
 
 ---
 
-### ✅ FASE 2: Funcionalidades Interactivas (COMPLETADA)
+###  FASE 2: Funcionalidades Interactivas (COMPLETADA)
 
 #### 1. **Popup de Newsletter** (`popup-newsletter.html`)
 - Mostrado después de 2 segundos
@@ -99,7 +99,7 @@ Artículos que posicionan el producto indirectamente:
 
 ---
 
-## 🛠️ Próximas Etapas (Pendientes)
+## ️ Próximas Etapas (Pendientes)
 
 1. **Más artículos de blog avanzados** — Serie sobre ciencia de los antioxidantes
 2. **Infografía visual** — "Ciclo de la Jamaica: planta a vaso"
@@ -107,7 +107,7 @@ Artículos que posicionan el producto indirectamente:
 
 ---
 
-## 🎨 Mejoras de UX/Técnicas Pendientes
+##  Mejoras de UX/Técnicas Pendientes
 
 | Elemento | Acción |
 |---|---|
@@ -118,7 +118,7 @@ Artículos que posicionan el producto indirectamente:
 
 ---
 
-## 📊 Métricas de Conversión a Medir
+##  Métricas de Conversión a Medir
 
 | Métrica | Herramienta | Objetivo |
 |---|---|---|
@@ -131,27 +131,27 @@ Artículos que posicionan el producto indirectamente:
 
 ---
 
-## ✅ Checklist de Estado Actual
+##  Checklist de Estado Actual
 
 | Tarea | Estado |
 |---|---|
-| ✅ Crear `/donde-comprar/` | COMPLETADO |
-| ✅ Crear `/contacto/` | COMPLETADO |
-| ✅ Generar catálogo PDF | COMPLETADO |
-| ✅ Generar recetario PDF | COMPLETADO |
-| ✅ Crear blog con 4 artículos | COMPLETADO |
-| ✅ Actualizar header y footer | COMPLETADO |
-| ✅ Agregar CTA principal en homepage | COMPLETADO |
-| ✅ Popup newsletter con lead magnet | COMPLETADO |
-| ✅ Sección `/testimonios/` con aviso legal | COMPLETADO |
-| ✅ Artículo avanzado del blog | COMPLETADO |
-| ✅ Glosario técnico interactivo | COMPLETADO |
-| ✅ Sección `/recetas/` filtrable | COMPLETADO |
-| ✅ Sección `/faq/` con acordeón | COMPLETADO |
+|  Crear `/donde-comprar/` | COMPLETADO |
+|  Crear `/contacto/` | COMPLETADO |
+|  Generar catálogo PDF | COMPLETADO |
+|  Generar recetario PDF | COMPLETADO |
+|  Crear blog con 4 artículos | COMPLETADO |
+|  Actualizar header y footer | COMPLETADO |
+|  Agregar CTA principal en homepage | COMPLETADO |
+|  Popup newsletter con lead magnet | COMPLETADO |
+|  Sección `/testimonios/` con aviso legal | COMPLETADO |
+|  Artículo avanzado del blog | COMPLETADO |
+|  Glosario técnico interactivo | COMPLETADO |
+|  Sección `/recetas/` filtrable | COMPLETADO |
+|  Sección `/faq/` con acordeón | COMPLETADO |
 
 ---
 
-## 📌 Registro de Decisiones Clave
+##  Registro de Decisiones Clave
 
 | Fecha | Decisión | Justificación |
 |---|---|---|

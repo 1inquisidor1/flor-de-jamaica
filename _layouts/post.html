@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <div class="page-wrapper">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%d de %B de %Y" }}
+        </time>
+        {% if page.author %}
+          <span class="post-author">Por: {{ page.author }}</span>
+        {% else %}
+          <span class="post-author">Por: {{ site.author }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div class="post-content">
+    <div class="page-wrapper">
+      {{ content }}
+    </div>
+  </div>
+
+  {% if page.categories or page.tags %}
+  <footer class="post-footer">
+    <div class="page-wrapper">
+      {% if page.categories %}
+      <div class="post-categories">
+        <strong>Categorías:</strong>
+        {% for category in page.categories %}
+          <a href="{{ '/blog/' | relative_url }}" class="categoria-tag">{{ category }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </footer>
+  {% endif %}
+</article>
