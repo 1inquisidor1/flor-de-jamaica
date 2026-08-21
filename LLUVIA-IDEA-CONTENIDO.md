@@ -49,6 +49,7 @@ Artículos que posicionan el producto indirectamente:
 - `comparativa-jamaica-natural.md` — diferencial vs. competencia
 - `receta-agua-jamaica.md` — guía de uso premium
 - `beneficios-cientificos-jamaica.md` — validación científica
+- `identificar-jamaica-autentica.md` — guía de identificación con tabla comparativa
 
 #### 5. **CTA principal en homepage**
 - Sección destacada: "¿Quieres probar la diferencia?" → enlaza a `/donde-comprar/`
@@ -59,41 +60,61 @@ Artículos que posicionan el producto indirectamente:
 
 ---
 
-## 🛠️ Próximas Etapas (Pendientes)
+### ✅ FASE 2: Funcionalidades Interactivas (COMPLETADA)
 
-### 📅 FASE 2: Contenido de Posicionamiento (Próxima)
+#### 1. **Popup de Newsletter** (`popup-newsletter.html`)
+- Mostrado después de 2 segundos
+- Cookie de 30 días para no molestar
+- Integración con Formspree.io
+- Lead magnet: recetario gratis
 
-#### A. Artículos de Blog Adicionales
-| Título | Objetivo |
-|---|---|
-| "¿Sabías que la Jamaica puede ayudarte a perder peso?" | Cross-selling de uso diario |
-| "La diferencia entre Jamaica real y aditivada" | Posiciona calidad premium |
-| "Testimonios reales: usuarios que cambiaron su rutina" | Social proof indirecto |
+#### 2. **Sección de Testimonios** (`/testimonios/`)
+- 5 testimonios empíricos ficticios con ratings
+- Aviso legal claro sobre observaciones empíricas
+- CTA a WhatsApp y catálogo PDF
 
-#### B. Glosario Interactivo (Inspirado en Botanipedia)
-- Tooltips con definiciones: "cáliz", "antocianina", "diurético"
-- Sección de términos técnicos explicados en lenguaje sencillo
+#### 3. **Glosario Técnico Interactivo** (`/glosario/`)
+- 16 términos categorizados: Botánica, Nutrición, Salud, Gastronomía
+- Tooltips interactivos con `data-glossary`
+- Búsqueda en tiempo real
+- Filtrado por categorías
+- JavaScript dedicado (`glossary.js`)
 
-#### C. Infografías Visuales (Estilo IBUNAM)
-- "El ciclo de la Jamaica: de la planta al vaso"
-- "Comparativa nutricional: Jamaica vs. té verde vs. café"
-- "Distribución mundial del cultivo de Hibiscus sabdariffa"
+#### 4. **Sección de Recetas Validadas** (`/recetas/`)
+- 7 recetas organizadas en 4 categorías
+- Videos tutoriales de YouTube embebidos
+- Buscador y filtrado por tipo
+- JavaScript dedicado (`recetas.js`)
 
-#### D. Testimonios Sociales
-- Sección `/testimonios/` con grid de fotos + citas
-- Videos cortos incrustados de YouTube (TikTok Reels)
+#### 5. **Sección de Preguntas Frecuentes** (`/faq/`)
+- 16 preguntas organizadas en 4 categorías:
+  - Producto y Compra (4 FAQ)
+  - Recetas y Preparación (4 FAQ)
+  - Salud y Beneficios (4 FAQ)
+  - Gastronomía y Usos (4 FAQ)
+- Buscador en tiempo real
+- Acordeón interactivo
+- Videos tutoriales embebidos
+- Aviso legal sobre no responsabilidad
 
 ---
 
-## 🎨 Mejora Técnica/UX
+## 🛠️ Próximas Etapas (Pendientes)
+
+1. **Más artículos de blog avanzados** — Serie sobre ciencia de los antioxidantes
+2. **Infografía visual** — "Ciclo de la Jamaica: planta a vaso"
+3. **Modo oscuro** — Toggle en el header
+
+---
+
+## 🎨 Mejoras de UX/Técnicas Pendientes
 
 | Elemento | Acción |
 |---|---|
-| **Popup de suscripción** | Mostrar al cargar: "¡Recibe tu recetario gratis!" |
 | **Modo oscuro** | Toggle en el header para modo noche |
-| **Contador de tiempo** | En blog: "Artículo leído en X minutos" |
-| **SEO On-Page** | Meta descripciones únicas por página |
-| **Open Graph** | Imágenes compartibles para redes |
+| **Contador de tiempo lectura** | En blog: "Artículo leído en X minutos" |
+| **Open Graph optimizado** | Imágenes compartibles para redes |
+| **Schema.org FAQ markup** | Para SEO de preguntas frecuentes |
 
 ---
 
@@ -101,10 +122,12 @@ Artículos que posicionan el producto indirectamente:
 
 | Métrica | Herramienta | Objetivo |
 |---|---|---|
-| Visitas a `/donde-comprar/` | GitHub Analytics / Plausible | Confirmar interés comercial |
-| Descargas de PDFs | Contador en servidor local | Medir engagement |
-| Clics en WhatsApp | WhatsApp Business (etiquetas UTM) | Medir intención de compra |
+| Visitas a `/donde-comprar/` | GitHub Analytics | Confirmar interés comercial |
+| Descargas de PDFs | Contador local | Medir engagement |
+| Clics en WhatsApp | WhatsApp Business UTM | Medir intención de compra |
 | Interacciones en blog | Tiempo en página | Medir valor del contenido |
+| Uso de glosario/tooltips | Eventos JS | Medir engagement técnico |
+| Búsquedas en FAQ/recetas | Eventos JS | Identificar dudas frecuentes |
 
 ---
 
@@ -119,18 +142,18 @@ Artículos que posicionan el producto indirectamente:
 | ✅ Crear blog con 4 artículos | COMPLETADO |
 | ✅ Actualizar header y footer | COMPLETADO |
 | ✅ Agregar CTA principal en homepage | COMPLETADO |
-| ✅ Agregar popup de newsletter con lead magnet | COMPLETADO |
-| ✅ Crear sección `/testimonios/` con aviso legal | COMPLETADO |
-| ✅ Agregar artículo avanzado del blog | COMPLETADO |
-| ⏳ Añadir glosario técnico interactivo | PENDIENTE |
-| ⏳ Crear infografías visuales | PENDIENTE |
-| ⏳ Añadir más artículos de blog | PENDIENTE |
+| ✅ Popup newsletter con lead magnet | COMPLETADO |
+| ✅ Sección `/testimonios/` con aviso legal | COMPLETADO |
+| ✅ Artículo avanzado del blog | COMPLETADO |
+| ✅ Glosario técnico interactivo | COMPLETADO |
+| ✅ Sección `/recetas/` filtrable | COMPLETADO |
+| ✅ Sección `/faq/` con acordeón | COMPLETADO |
 
 ---
 
 ## 📌 Registro de Decisiones Clave
 
-| Fecha | Decision | Justificación |
+| Fecha | Decisión | Justificación |
 |---|---|---|
 | 2025-04-05 | Usar Formspree.io para formularios | Compatible con GitHub Pages, sin backend |
 | 2025-04-05 | PDFs como lead magnet | Formato profesional, fácil de compartir |
@@ -140,7 +163,9 @@ Artículos que posicionan el producto indirectamente:
 | 2025-04-05 | Testimonios ficticios con aviso legal | Cumple TOS de GitHub Pages, evita datos reales |
 | 2025-04-05 | Referencias a sitios web de divulgación | Fortalece credibilidad científica del contenido |
 | 2025-04-05 | Aviso de no responsabilidad en artículos | Cumple con normativas de contenido informativo |
+| 2025-04-05 | Glosario interactivo con tooltips | Mejora UX educativa sin sobrecargar |
+| 2025-04-05 | Videos tutoriales embebidos en FAQ | Aumenta engagement y credibilidad |
+| 2025-04-05 | FAQ con acordeón dinámico | Mejora navegación y reduce esfuerzo de lectura |
 
 ---
-
-> **Próximo paso**: ¿Implementamos el popup de suscripción o creamos la sección de testimonios?
+*Documento actualizado: 2025-04-05*
