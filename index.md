@@ -20,7 +20,7 @@ image: /assets/images/slider/campo-hibiscus.webp
 
  <!-- Slide 2: Flor individual close-up -->
  <div class="slide" role="group" aria-label="Slide 2 de 3" aria-hidden="true">
- <img src="{{ '/assets/images/slider/flor-hibiscus-jamaica.webp' | relative_url }}" alt="Flor de Jamaica close-up" loading="lazy" width="1920" height="800">
+ <img src="{{ '/assets/images/slider/flor-hibiscus-jamaica.webp' | relative_url }}" alt="Flor de Jamaica individual en close-up, mostrando su cáliz rojo y pétalos" loading="lazy" width="1920" height="800">
  <div class="slide-texto">
  <h1 class="slide-titulo">Naturaleza en cada pétalo</h1>
  <p class="slide-subtitulo">Descubre su estructura única</p>
