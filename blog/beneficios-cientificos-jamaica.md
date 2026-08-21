@@ -7,8 +7,8 @@ categories: beneficios salud
 ---
 
 <p class="intro-texto">
-  La Flor de Jamaica no es solo una tradición ancestral: la ciencia moderna la respalda. 
-  Aquí te contamos qué dicen los estudios más recientes sobre sus beneficios para la salud.
+ La Flor de Jamaica no es solo una tradición ancestral: la ciencia moderna la respalda. 
+ Aquí te contamos qué dicen los estudios más recientes sobre sus beneficios para la salud.
 </p>
 
 <hr>
@@ -23,21 +23,21 @@ Múltiples investigaciones han confirmado que la Flor de Jamaica (*Hibiscus sabd
 
 ---
 
-## 📊 Beneficios respaldados por estudios
+## Beneficios respaldados por estudios
 
-### 1. Regulación de la presión arterial ✅
+### 1. Regulación de la presión arterial 
 
 Un estudio publicado en *The Journal of Nutrition* demostró que:
 
 > "El consumo de 5-10 g de Flor de Jamaica al día redujo significativamente la presión arterial sistólica y diastólica en adultos con hipertensión leve."
 
-### 2. Poder antioxidante fuerte ✅
+### 2. Poder antioxidante fuerte 
 
 La comparación con otras bebidas vegetales reveló que:
 
 > "La Infusión de Jamaica tiene un poder antioxidante 3 veces mayor que el té verde convencional."
 
-### 3. Efecto diurético natural ✅
+### 3. Efecto diurético natural 
 
 Estudios en *Phytotherapy Research* muestran que:
 
@@ -45,14 +45,14 @@ Estudios en *Phytotherapy Research* muestran que:
 
 ---
 
-## ⚠️ Aviso importante
+## Aviso importante
 
-> Aunque la Flor de Jamaica es segura para la mayoría, **no es un reemplazo médico**.  
+> Aunque la Flor de Jamaica es segura para la mayoría, **no es un reemplazo médico**. 
 > Si tomas medicamentos o tienes condiciones de salud específicas, consulta a tu médico antes de consumirla regularmente.
 
 ---
 
-## 🎁 ¿Quieres aprender más sobre sus beneficios?
+## ¿Quieres aprender más sobre sus beneficios?
 
 Descarga nuestro **catálogo completo** con información detallada sobre nutrientes, usos y recomendaciones:
 

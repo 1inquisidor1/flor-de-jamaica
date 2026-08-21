@@ -1,4 +1,4 @@
-# 🌺 Flor de Jamaica — Elegancia Natural
+# Flor de Jamaica — Elegancia Natural
 
 Sitio web estático construido con [Jekyll](https://jekyllrb.com/) y desplegado en GitHub Pages, dedicado a la Flor de Jamaica (*Hibiscus sabdariffa*): su apariencia botánica, composición nutricional, beneficios respaldados científicamente y usos gastronómicos, medicinales e industriales.
 
@@ -6,34 +6,34 @@ Sitio web estático construido con [Jekyll](https://jekyllrb.com/) y desplegado 
 
 ---
 
-## 📖 Visión General
+## Visión General
 
 Este repositorio contiene un sitio web Jekyll completo que funciona como **showroom digital** de la Flor de Jamaica. El sitio está optimizado para GitHub Pages, cumpliendo con sus Términos de Servicio (no incluye e-commerce directo) — las ventas se realizan indirectamente vía WhatsApp e Instagram.
 
 ---
 
-## 🗂️ Estructura del Repositorio
+## Estructura del Repositorio
 
 El sitio web está construido directamente en la raíz del repositorio:
 
 ```
-├── _config.yml            Configuración global de Jekyll
-├── _layouts/              Plantillas HTML (default, home, page)
-├── _includes/             Componentes reutilizables (header, footer, popup)
-├── _posts/                Artículos de blog
-├── blog/                  Artículos de blog avanzados
-├── assets/                Recursos estáticos (CSS, JS, imágenes, datos)
-├── *.md                   Páginas: index, beneficios, composición, etc.
-├── 404.html               Página de error 404 personalizada
-├── robots.txt             Directivas para motores de búsqueda
+├── _config.yml Configuración global de Jekyll
+├── _layouts/ Plantillas HTML (default, home, page)
+├── _includes/ Componentes reutilizables (header, footer, popup)
+├── _posts/ Artículos de blog
+├── blog/ Artículos de blog avanzados
+├── assets/ Recursos estáticos (CSS, JS, imágenes, datos)
+├── *.md Páginas: index, beneficios, composición, etc.
+├── 404.html Página de error 404 personalizada
+├── robots.txt Directivas para motores de búsqueda
 ├── Gemfile & Gemfile.lock Dependencias de Ruby/Jekyll
-├── .nojekyll              Fuerza el procesamiento de assets por GitHub Pages
-└── .github/workflows/     Configuración de despliegue con GitHub Actions
+├── .nojekyll Fuerza el procesamiento de assets por GitHub Pages
+└── .github/workflows/ Configuración de despliegue con GitHub Actions
 ```
 
 ---
 
-## 🎨 Paleta de Colores
+## Paleta de Colores
 
 | Color | Hex | Uso |
 |---|---|---|
@@ -47,7 +47,7 @@ El sitio web está construido directamente en la raíz del repositorio:
 
 ---
 
-## 💻 Desarrollo Local
+## Desarrollo Local
 
 Requisitos previos:
 - Ruby 3.2+
@@ -65,7 +65,7 @@ bundle exec jekyll serve
 
 ---
 
-## 🛠️ Mantenimiento y Modificaciones
+## Mantenimiento y Modificaciones
 
 ### Editar contenido existente
 Modifica los archivos `.md` correspondientes a cada sección:
@@ -87,14 +87,14 @@ Modifica los archivos `.md` correspondientes a cada sección:
 
 ### Agregar una nueva página
 1. Crea un archivo `.md` en la raíz con este `front matter`:
-   ```yaml
-   ---
-   layout: page
-   title: "Título de la página"
-   description: "Meta descripción breve (máximo 160 caracteres)"
-   image: /assets/images/slider/campo-hibiscus.webp
-   ---
-   ```
+ ```yaml
+ ---
+ layout: page
+ title: "Título de la página"
+ description: "Meta descripción breve (máximo 160 caracteres)"
+ image: /assets/images/slider/campo-hibiscus.webp
+ ---
+ ```
 2. Agrega el enlace en `_includes/header.html`
 3. Haz commit y push
 
@@ -105,7 +105,7 @@ Modifica los archivos `.md` correspondientes a cada sección:
 
 ---
 
-## ⚙️ Configuración de Recursos Interactivos
+## Configuración de Recursos Interactivos
 
 El sitio utiliza archivos JSON para datos dinámicos:
 
@@ -119,20 +119,20 @@ Los scripts JavaScript (`glossary.js`, `recetas.js`, `faq.js`) cargan estos JSON
 
 ---
 
-## 🚀 Despliegue (GitHub Pages)
+## Despliegue (GitHub Pages)
 
 El sitio se publica automáticamente en GitHub Pages mediante GitHub Actions (`.github/workflows/deploy.yml`). Cada push a `main` reconstruye el sitio y lo publica en `https://1inquisidor1.github.io/flor-de-jamaica/`.
 
 **Para habilitar GitHub Pages (una sola vez):**
-1. En GitHub → Settings → Pages
-2. Build and deployment → Source: **"GitHub Actions"**
+1. En GitHub Settings Pages
+2. Build and deployment Source: **"GitHub Actions"**
 3. El workflow construye con `bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"`
 
 ---
 
-## 📜 Licencia
+## Licencia
 
-Contenido educativo e informativo sobre la Flor de Jamaica. Uso libre con atribución.  
+Contenido educativo e informativo sobre la Flor de Jamaica. Uso libre con atribución. 
 
 Los datos empíricos y testimonios son observaciones no verificables y no constituyen consejo médico. Siempre consulta con un profesional de la salud antes de modificar tu dieta.
 

@@ -7,8 +7,8 @@ categories: recetas
 ---
 
 <p class="intro-texto">
-  Un vaso de agua de Jamaica bien preparada puede marcar la diferencia entre un refresco ordinario 
-  y una experiencia sensorial inolvidable. Aquí te compartimos el método profesional.
+ Un vaso de agua de Jamaica bien preparada puede marcar la diferencia entre un refresco ordinario 
+ y una experiencia sensorial inolvidable. Aquí te compartimos el método profesional.
 </p>
 
 <hr>
@@ -32,7 +32,7 @@ categories: recetas
 - Vierte el agua fría lentamente sobre los cálices.
 - Deja reposar en el refrigerador por **8 a 12 horas**.
 
-> 💡 *La infusión fría conserva mejor los compuestos antioxidantes y da un sabor más suave.*
+> *La infusión fría conserva mejor los compuestos antioxidantes y da un sabor más suave.*
 
 ### 2. **Colado y endulzado**
 - Cuela con un colador fino para eliminar sedimentos.
@@ -44,7 +44,7 @@ categories: recetas
 
 ---
 
-## 🌟 Consejos de los expertos
+## Consejos de los expertos
 
 - **No hiervas**: El calor intenso puede destruir algunos de los compuestos activos.
 - **Usa agua filtrada**: Mejora notablemente el sabor.

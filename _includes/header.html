@@ -1,104 +1,102 @@
 <header class="header" id="header">
-  <div class="header-contenedor">
+ <div class="header-contenedor">
 
-    <!-- Logo / Nombre del sitio -->
-    <a href="{{ '/' | relative_url }}" class="logo">
-      <span class="logo-emoji">🌺</span>
-      <span class="logo-texto">Jamaica</span>
-    </a>
+ <!-- Logo / Nombre del sitio -->
+ <a href="{{ '/' | relative_url }}" class="logo">
+ <span class="logo-texto">Jamaica</span>
+ </a>
 
-    <!-- Menú Hamburguesa (visible solo en móvil) -->
-    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
-    <label for="menu-toggle" class="hamburguesa">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
+ <!-- Menú Hamburguesa (visible solo en móvil) -->
+ <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
+ <label for="menu-toggle" class="hamburguesa">
+ <span></span>
+ <span></span>
+ <span></span>
+ </label>
 
-    <!-- Navegación -->
-    <nav class="nav" id="nav">
-      <ul class="nav-lista">
+ <!-- Navegación -->
+ <nav class="nav" id="nav">
+ <ul class="nav-lista">
 
-        <!-- Enlace Inicio -->
-        <li class="nav-item">
-          <a href="{{ '/' | relative_url }}" class="nav-enlace">
-            Inicio
-          </a>
-        </li>
+ <!-- Enlace Inicio -->
+ <li class="nav-item">
+ <a href="{{ '/' | relative_url }}" class="nav-enlace">
+ Inicio
+ </a>
+ </li>
 
-        <!-- Menú Explorar (Dropdown en escritorio / Acordeón en móvil) -->
-        <li class="nav-item nav-dropdown" id="nav-dropdown">
-          <button class="nav-enlace nav-enlace-dropdown" id="btn-explorar" aria-expanded="false" aria-haspopup="true">
-            Explorar
-            <svg class="icono-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M6 9l6 6 6-6"></path>
-            </svg>
-          </button>
+ <!-- Menú Explorar (Dropdown en escritorio / Acordeón en móvil) -->
+ <li class="nav-item nav-dropdown" id="nav-dropdown">
+ <button class="nav-enlace nav-enlace-dropdown" id="btn-explorar" aria-expanded="false" aria-haspopup="true">
+ Explorar
+ <svg class="icono-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+ <path d="M6 9l6 6 6-6"></path>
+ </svg>
+ </button>
 
-          <!-- Submenú Explorar -->
-          <ul class="nav-submenu" id="nav-submenu">
-            <li><a href="{{ '/apariencia/' | relative_url }}" class="nav-subenlace">🌿 Apariencia</a></li>
-            <li><a href="{{ '/composicion/' | relative_url }}" class="nav-subenlace">🧪 Composición</a></li>
-            <li><a href="{{ '/beneficios/' | relative_url }}" class="nav-subenlace">❤️ Beneficios</a></li>
-            <li><a href="{{ '/usos/' | relative_url }}" class="nav-subenlace">🍹 Usos</a></li>
-          </ul>
-        </li>
+ <!-- Submenú Explorar -->
+ <ul class="nav-submenu" id="nav-submenu">
+ <li><a href="{{ '/apariencia/' | relative_url }}" class="nav-subenlace">Apariencia</a></li>
+ <li><a href="{{ '/composicion/' | relative_url }}" class="nav-subenlace">Composición</a></li>
+ <li><a href="{{ '/beneficios/' | relative_url }}" class="nav-subenlace">Beneficios</a></li>
+ <li><a href="{{ '/usos/' | relative_url }}" class="nav-subenlace">Usos</a></li>
+ </ul>
+ </li>
 
-        <!-- Enlace Dónde Comprar -->
-        <li class="nav-item">
-          <a href="{{ '/donde-comprar/' | relative_url }}" class="nav-enlace">
-            🛒 Dónde Comprar
-          </a>
-        </li>
+ <!-- Enlace Dónde Comprar -->
+ <li class="nav-item">
+ <a href="{{ '/donde-comprar/' | relative_url }}" class="nav-enlace">
+ Dónde Comprar
+ </a>
+ </li>
 
-        <!-- Enlace Contacto -->
-        <li class="nav-item">
-          <a href="{{ '/contacto/' | relative_url }}" class="nav-enlace">
-            📧 Contacto
-          </a>
-        </li>
+ <!-- Enlace Contacto -->
+ <li class="nav-item">
+ <a href="{{ '/contacto/' | relative_url }}" class="nav-enlace">
+ Contacto
+ </a>
+ </li>
 
-        <!-- Enlace Blog -->
-        <li class="nav-item">
-          <a href="{{ '/blog/' | relative_url }}" class="nav-enlace">
-            📝 Blog
-          </a>
-        </li>
+ <!-- Enlace Blog -->
+ <li class="nav-item">
+ <a href="{{ '/blog/' | relative_url }}" class="nav-enlace">
+ Blog
+ </a>
+ </li>
 
-        <!-- Enlace Testimonios -->
-        <li class="nav-item">
-          <a href="{{ '/testimonios/' | relative_url }}" class="nav-enlace">
-            🗣️ Testimonios
-          </a>
-        </li>
+ <!-- Enlace Testimonios -->
+ <li class="nav-item">
+ <a href="{{ '/testimonios/' | relative_url }}" class="nav-enlace">
+ Testimonios
+ </a>
+ </li>
 
-        <!-- Enlace Glosario -->
-        <li class="nav-item">
-          <a href="{{ '/glosario/' | relative_url }}" class="nav-enlace">
-            📚 Glosario
-          </a>
-        </li>
+ <!-- Enlace Glosario -->
+ <li class="nav-item">
+ <a href="{{ '/glosario/' | relative_url }}" class="nav-enlace">
+ Glosario
+ </a>
+ </li>
 
-        <!-- Enlace Recetas -->
-        <li class="nav-item">
-          <a href="{{ '/recetas/' | relative_url }}" class="nav-enlace">
-            👨‍🍳 Recetas
-          </a>
-        </li>
+ <!-- Enlace Recetas -->
+ <li class="nav-item">
+ <a href="{{ '/recetas/' | relative_url }}" class="nav-enlace">
+ Recetas
+ </a>
+ </li>
 
-        <!-- Enlace FAQ -->
-        <li class="nav-item">
-          <a href="{{ '/faq/' | relative_url }}" class="nav-enlace">
-            ❓ FAQ
-          </a>
-        </li>
+ <!-- Enlace FAQ -->
+ <li class="nav-item">
+ <a href="{{ '/faq/' | relative_url }}" class="nav-enlace">
+ FAQ
+ </a>
+ </li>
 
-      </ul>
-    </nav>
+ </ul>
+ </nav>
 
-  </div>
+ </div>
 </header>
 
 <!-- Nota: La lógica de interactividad (menú hamburguesa, acordeón, header
-     glassmorphism) se gestiona centralmente en assets/js/main.js (FASE 4). -->
-
+ glassmorphism) se gestiona centralmente en assets/js/main.js (FASE 4). -->
