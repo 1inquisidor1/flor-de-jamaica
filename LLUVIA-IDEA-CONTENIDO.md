@@ -116,13 +116,15 @@ Artículos que posicionan el producto indirectamente:
 | ✅ Crear `/contacto/` | COMPLETADO |
 | ✅ Generar catálogo PDF | COMPLETADO |
 | ✅ Generar recetario PDF | COMPLETADO |
-| ✅ Crear blog con 3 artículos | COMPLETADO |
+| ✅ Crear blog con 4 artículos | COMPLETADO |
 | ✅ Actualizar header y footer | COMPLETADO |
 | ✅ Agregar CTA principal en homepage | COMPLETADO |
-| ⏳ Agregar popup de newsletter | PENDIENTE |
-| ⏳ Crear glosario técnico interactivo | PENDIENTE |
-| ⏳ Añadir testimonios sociales | PENDIENTE |
+| ✅ Agregar popup de newsletter con lead magnet | COMPLETADO |
+| ✅ Crear sección `/testimonios/` con aviso legal | COMPLETADO |
+| ✅ Agregar artículo avanzado del blog | COMPLETADO |
+| ⏳ Añadir glosario técnico interactivo | PENDIENTE |
 | ⏳ Crear infografías visuales | PENDIENTE |
+| ⏳ Añadir más artículos de blog | PENDIENTE |
 
 ---
 
@@ -135,6 +137,9 @@ Artículos que posicionan el producto indirectamente:
 | 2025-04-05 | Enfoque indirecto de venta | Respetuoso con TOS de GitHub Pages |
 | 2025-04-05 | Blog científico-comercial | Genera autoridad y confianza sin ser agresivo |
 | 2025-04-05 | WhatsApp como canal de venta | Alto ROI en LATAM, fácil de integrar |
+| 2025-04-05 | Testimonios ficticios con aviso legal | Cumple TOS de GitHub Pages, evita datos reales |
+| 2025-04-05 | Referencias a sitios web de divulgación | Fortalece credibilidad científica del contenido |
+| 2025-04-05 | Aviso de no responsabilidad en artículos | Cumple con normativas de contenido informativo |
 
 ---
 
