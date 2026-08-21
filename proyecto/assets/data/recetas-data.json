@@ -1,0 +1,216 @@
+{
+  "categories": [
+    {
+      "id": "bebida",
+      "name": "Bebidas",
+      "icon": "🥤",
+      "recipes": [
+        {
+          "id": "agua-jamaica-clasica",
+          "title": "Agua de Jamaica Clásica",
+          "description": "La bebida más tradicional y refrescante hecha con Flor de Jamaica. Perfecta para compartir en familia.",
+          "time": "20 min",
+          "servings": "8 personas",
+          "difficulty": "Fácil",
+          "youtube_url": "https://www.youtube.com/watch?v=leYw473ET4o",
+          "youtube_title": "Como Hacer Agua de Jamaica, Receta facil - YouTube",
+          "source": "Canal YouTube: recetas faciles",
+          "ingredients": [
+            "2 tazas de flores de Jamaica secas",
+            "8 tazas de agua",
+            "1 taza de azúcar (ajustar al gusto)",
+            "Hielo al servir",
+            "Rodajas de limón (opcional)"
+          ],
+          "steps": [
+            "1. En una olla mediana, coloca las flores de Jamaica secas.",
+            "2. Añade 4 tazas de agua y lleva a ebullición.",
+            "3. Reduce el fuego y deja hervir a fuego lento por 5-7 minutos.",
+            "4. Retira del fuego y deja infusionar por 10 minutos.",
+            "5. Cuela la mezcla y desecha las flores.",
+            "6. Agrega el azúcar mientras el líquido aún está tibio y mezcla bien.",
+            "7. Añade las 4 tazas restantes de agua fría.",
+            "8. Deja enfriar en refrigeración por al menos 1 hora.",
+            "9. Sirve con hielo y rodajas de limón."
+          ]
+        },
+        {
+          "id": "agua-jamaica-rapida",
+          "title": "Agua de Jamaica Rápida (5 min)",
+          "description": "Versión exprés de la bebida clásica, lista en solo 5 minutos. Ideal para emergencias refrescantes.",
+          "time": "5 min",
+          "servings": "4 personas",
+          "difficulty": "Fácil",
+          "youtube_url": "https://www.youtube.com/watch?v=ZYoJUURxjrw",
+          "youtube_title": "Cómo Hacer AGUA DE JAMAICA Rápida y Fácil en 5 Min - YouTube",
+          "source": "Canal YouTube: recetas rápidas",
+          "ingredients": [
+            "½ taza de flores de Jamaica secas",
+            "4 tazas de agua caliente",
+            "¼ taza de azúcar",
+            "Hielo al servir"
+          ],
+          "steps": [
+            "1. Coloca las flores de Jamaica en un recipiente resistente al calor.",
+            "2. Vierte el agua caliente (casi hirviendo) sobre las flores.",
+            "3. Deja infusionar por 5 minutos.",
+            "4. Cuela y añade el azúcar al gusto.",
+            "5. Deja enfriar y sirve con hielo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "postre",
+      "name": "Postres",
+      "icon": "🍰",
+      "recipes": [
+        {
+          "id": "mermelada-dulce-picante",
+          "title": "Mermelada Dulce y Picante de Jamaica",
+          "description": "Una mermelada versátil que combina el dulzor de la Jamaica con el picante del chipotle. Ideal para postres y aperitivos.",
+          "time": "45 min",
+          "servings": "4 tazas",
+          "difficulty": "Media",
+          "youtube_url": "https://www.youtube.com/watch?v=example_mermelada",
+          "youtube_title": "Cómo hacer mermelada de jamaica dulce y picante - Tutorial",
+          "source": "Receta basada en Cocina Delirante",
+          "ingredients": [
+            "1 taza de flor de Jamaica seca",
+            "1 litro de agua + ½ taza",
+            "1 pieza de manzana grande, rallada",
+            "¼ taza de azúcar",
+            "200g de chile chipotle en adobo (para variante picante)"
+          ],
+          "steps": [
+            "1. Enjuaga la Jamaica para quitar tierra e impurezas.",
+            "2. Hiérvela en 1 litro de agua por 15 minutos hasta obtener color rojo oscuro.",
+            "3. Cuela y reserva el líquido. Licúa ¾ de la flor con ½ taza de agua.",
+            "4. Coloca la pulpa en una olla con azúcar y flores enteras.",
+            "5. Hierve a fuego medio, añade manzana rallada.",
+            "6. Cocina a fuego lento hasta que espese.",
+            "7. Para variante picante: agrega chipotle picado al hervir."
+          ]
+        },
+        {
+          "id": "galletas-jamaica",
+          "title": "Galletas de Avena con Flor de Jamaica",
+          "description": "Galletas crujientes con el toque ácido de la Jamaica. Perfectas para acompañar el té de la tarde.",
+          "time": "30 min",
+          "servings": "12 galletas",
+          "difficulty": "Fácil",
+          "youtube_url": "https://www.youtube.com/watch?v=example_galletas",
+          "youtube_title": "Galletas de Jamaica caseras - Receta fácil",
+          "source": "Receta inspirada en blogs de repostería",
+          "ingredients": [
+            "1½ taza de harina de trigo",
+            "½ taza de azúcar morena",
+            "½ taza de mantequilla",
+            "1 huevo",
+            "2 cucharadas de Flor de Jamaica molida",
+            "1 cucharadita de canela"
+          ],
+          "steps": [
+            "1. Precalienta el horno a 180°C.",
+            "2. Mezcla la mantequilla con el azúcar hasta cremar.",
+            "3. Añade el huevo y la Flor de Jamaica molida.",
+            "4. Incorpora la harina y la canela.",
+            "5. Forma bolitas y aplánalas.",
+            "6. Hornea 12-15 minutos hasta dorar los bordes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cosmestico",
+      "name": "Cosméticos",
+      "icon": "🧴",
+      "recipes": [
+        {
+          "id": "mascarilla-facial",
+          "title": "Mascarilla Facial con Flor de Jamaica",
+          "description": "Tratamiento natural para hidratar y renovar la piel. Ideal para todo tipo de piel.",
+          "time": "15 min + reposo",
+          "servings": "1 aplicación",
+          "difficulty": "Fácil",
+          "youtube_url": "https://www.youtube.com/watch?v=example_mascarilla",
+          "youtube_title": "Mascarilla facial casera con Jamaica - Belleza natural",
+          "source": "Receta tradicional de belleza natural",
+          "ingredients": [
+            "2 cucharadas de flores de Jamaica secas",
+            "1 taza de agua",
+            "1 cucharada de miel",
+            "1 cucharadita de aceite de oliva"
+          ],
+          "steps": [
+            "1. Hierve las flores de Jamaica en 1 taza de agua por 10 minutos.",
+            "2. Cuela y deja enfriar a temperatura ambiente.",
+            "3. Añade la miel y el aceite de oliva.",
+            "4. Aplica sobre el rostro limpio con una brocha.",
+            "5. Deja actuar 15-20 minutos.",
+            "6. Enjuaga con agua tibia y seca."
+          ]
+        },
+        {
+          "id": "jabones-artesanales",
+          "title": "Jabones Artesanales con Essex de Jamaica",
+          "description": "Crea jabones artesanales con el color y aroma natural de la Jamaica. Perfectos para regalar.",
+          "time": "45 min + endurecimiento",
+          "servings": "8 jabones",
+          "difficulty": "Media",
+          "youtube_url": "https://www.youtube.com/watch?v=example_jabones",
+          "youtube_title": "Jabones artesanales con Jamaica - DIY cosméticos",
+          "source": "Receta de manualidades y cosméticos caseros",
+          "ingredients": [
+            "500g de glicerina de vaca",
+            "250ml de leche de coco",
+            "1 taza de Essex de Jamaica concentrado",
+            "Aceites esenciales (opcional)"
+          ],
+          "steps": [
+            "1. Derrite la glicerina con la leche de coco a baño María.",
+            "2. Añade el Essex de Jamaica colado.",
+            "3. Vierte en moldes previamente engrasados.",
+            "4. Deja endurecer 24-48 horas.",
+            "5. Desmolda y cura por 1 semana."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coctel",
+      "name": "Cócteles",
+      "icon": "🍸",
+      "recipes": [
+        {
+          "id": "coctel-jamaica-ron",
+          "title": "Cóctel de Jamaica con Ron",
+          "description": "Un cóctel tropical que combina el toque ácido de la Jamaica con el ron. Perfecto para ocasiones especiales.",
+          "time": "10 min",
+          "servings": "2 copas",
+          "difficulty": "Fácil",
+          "youtube_url": "https://www.youtube.com/watch?v=example_coctel",
+          "youtube_title": "Cóctel de Jamaica con ron - Receta tropical",
+          "source": "Receta de coctelería moderna",
+          "ingredients": [
+            "1 taza de agua de Jamaica fría",
+            "120ml de ron blanco",
+            "30ml de licor de naranja",
+            "1 cucharada de jarabe de agave",
+            "Jugo de ½ lima",
+            "Hielo picado",
+            "Rodaja de lima para decorar"
+          ],
+          "steps": [
+            "1. Prepara el agua de Jamaica y deja enfriar.",
+            "2. En una coctelera, combina el ron, licor de naranja y jarabe.",
+            "3. Añade el jugo de lima y hielo.",
+            "4. Agita vigorosamente durante 15 segundos.",
+            "5. Cuela en copas frías.",
+            "6. Añade más hielo y decora con lima."
+          ]
+        }
+      ]
+    }
+  ]
+}

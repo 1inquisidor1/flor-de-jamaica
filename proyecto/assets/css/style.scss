@@ -1641,3 +1641,232 @@ form {
     }
   }
 }
+
+// ============================================================================
+// 19. SECCIÓN DE RECETAS FILTRABLES
+// ============================================================================
+
+// Buscador de recetas
+.recetas-search-bar {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl);
+
+  input {
+    width: 100%;
+    padding: 14px 20px 14px 44px;
+    border: 2px solid var(--gris-medio);
+    border-radius: 50px;
+    font-size: 15px;
+    font-family: var(--font-cuerpo);
+    transition: all var(--transition-base);
+
+    &:focus {
+      outline: none;
+      border-color: var(--rojo-profundo);
+      box-shadow: 0 0 0 3px rgba(183, 31, 62, 0.2);
+    }
+  }
+
+  .recetas-clear-search {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: color var(--transition-base);
+
+    &:hover {
+      color: var(--rojo-profundo);
+    }
+  }
+}
+
+// Barra de filtros
+.recetas-filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.recetas-filter-btn {
+  padding: 8px 20px;
+  border: 2px solid var(--gris-medio);
+  border-radius: 24px;
+  background: var(--blanco);
+  color: var(--tinta);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+
+  &:hover {
+    border-color: var(--rojo-profundo);
+    color: var(--rojo-profundo);
+  }
+
+  &.active {
+    background: var(--rojo-profundo);
+    color: var(--blanco);
+    border-color: var(--rojo-profundo);
+  }
+}
+
+// Grid de recetas
+.recetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+// Tarjeta de receta
+.receta-card {
+  background: var(--blanco);
+  border: 1px solid var(--gris-medio);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--rojo-profundo);
+  }
+
+  .receta-imagen {
+    font-size: 32px;
+    text-align: center;
+    padding: 20px;
+    background: var(--crema);
+    border-bottom: 1px solid var(--gris-medio);
+  }
+
+  .receta-contenido {
+    padding: var(--spacing-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .receta-header {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .receta-titulo {
+    font-family: var(--font-titulo);
+    font-size: 20px;
+    color: var(--rojo-profundo);
+    margin: 0 0 6px;
+  }
+
+  .receta-meta {
+    display: flex;
+    gap: var(--spacing-sm);
+    font-size: 13px;
+    color: #777;
+  }
+
+  .receta-descripcion {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .receta-seccion {
+    margin-bottom: var(--spacing-md);
+
+    h4 {
+      font-size: 14px;
+      color: var(--verde-hoja);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .icon {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .receta-ingredientes,
+  .receta-pasos {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #666;
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 4px;
+    }
+  }
+
+  .receta-video {
+    margin: var(--spacing-md) 0;
+
+    h4 {
+      font-size: 14px;
+      color: var(--rojo-profundo);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .icon {
+        font-size: 12px;
+      }
+    }
+
+    iframe {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gris-medio);
+    }
+
+    .receta-video-fuente {
+      display: block;
+      text-align: right;
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    .receta-sin-video {
+      text-align: center;
+      color: #999;
+      font-style: italic;
+      padding: 20px;
+    }
+  }
+
+  .receta-source {
+    margin-top: auto;
+    border-top: 1px dashed var(--gris-medio);
+    padding-top: var(--spacing-sm);
+
+    .aviso-pequeno {
+      color: #888;
+      font-style: italic;
+    }
+  }
+}
+
+// Mensaje de carga/error
+.recetas-loading,
+.recetas-error,
+.recetas-no-results {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: #777;
+  font-size: 16px;
+}
