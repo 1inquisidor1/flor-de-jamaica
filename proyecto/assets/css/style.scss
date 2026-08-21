@@ -944,3 +944,118 @@ a {
     color: var(--negro);
   }
 }
+
+// ============================================================================
+// 13. ESTILOS ADICIONALES PARA CONTENIDO COMERCIAL
+// ============================================================================
+
+// Botones de contacto combinados
+.botones-contacto {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  margin: var(--spacing-lg) 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+// Lista de tiendas
+.lista-tiendas {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--gris-medio);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  strong {
+    color: var(--rojo-profundo);
+  }
+
+  small {
+    color: #777;
+    display: block;
+    margin-top: 4px;
+  }
+}
+
+// Redes sociales en footer
+.redes-sociales {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color var(--transition-base);
+
+    &:hover {
+      color: var(--blanco);
+    }
+  }
+}
+
+// Formularios de contacto
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+form {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--gris-medio);
+    border-radius: 8px;
+    font-family: var(--font-cuerpo);
+    font-size: 15px;
+    transition: border-color var(--transition-base);
+
+    &:focus {
+      outline: none;
+      border-color: var(--rojo-profundo);
+      box-shadow: 0 0 0 3px rgba(183, 31, 62, 0.2);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    justify-self: start;
+  }
+}
+
+// Intro texto en páginas internas
+.intro-texto {
+  font-size: 18px;
+  max-width: 720px;
+  margin: 0 auto var(--spacing-xl);
+  line-height: 1.8;
+  color: #555;
+  text-align: center;
+  display: block;
+}

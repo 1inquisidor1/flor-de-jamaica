@@ -105,6 +105,13 @@ description: "Descubre la belleza, propiedades y usos de esta flor excepcional"
       </article>
 
     </div>
+
+    <!-- CTA: Dónde comprar -->
+    <div class="cta-compra animar-entrada" style="text-align: center; margin-top: 48px; padding: 32px; background: var(--crema); border-radius: 12px;">
+      <h3 style="color: var(--rojo-profundo); font-family: var(--font-titulo); margin-bottom: 16px;">¿Quieres probar la diferencia?</h3>
+      <p style="margin-bottom: 24px;">Descubre dónde encontrar nuestra Flor de Jamaica 100% natural y lleva su pureza a tu hogar.</p>
+      <a href="{{ '/donde-comprar/' | relative_url }}" class="tarjeta-boton">Ver puntos de venta →</a>
+    </div>
   </div>
 </section>
 
