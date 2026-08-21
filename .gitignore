@@ -4,6 +4,10 @@ _site/
 .jekyll-metadata
 *.gem
 
+# Compiled CSS (Jekyll genera style.css desde style.scss)
+assets/css/style.css
+assets/css/style.css.map
+
 # Bundler
 .bundle/
 

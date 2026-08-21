@@ -3,7 +3,7 @@
     {
       "id": "producto",
       "name": "Producto y Compra",
-      "icon": "🛒",
+      "icon": "producto",
       "faqs": [
         {
           "id": "producto-autentica",
@@ -38,7 +38,7 @@
     {
       "id": "recetas",
       "name": "Recetas y Preparación",
-      "icon": "👨‍🍳",
+      "icon": "recetas",
       "faqs": [
         {
           "id": "receta-agua-perfecta",
@@ -73,7 +73,7 @@
     {
       "id": "salud",
       "name": "Salud y Beneficios",
-      "icon": "🩺",
+      "icon": "salud",
       "faqs": [
         {
           "id": "salud-presion",
@@ -108,7 +108,7 @@
     {
       "id": "gastronomia",
       "name": "Gastronomía y Usos",
-      "icon": "🍽️",
+      "icon": "gastronomia",
       "faqs": [
         {
           "id": "gastronomia-colorante",

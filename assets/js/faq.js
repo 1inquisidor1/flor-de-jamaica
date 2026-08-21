@@ -258,5 +258,5 @@
     initFaq();
   }
   
-  console.log('❓ FAQ inicializada | Base path:', basePath);
+  console.log('FAQ inicializada | Base path:', basePath);
 })();

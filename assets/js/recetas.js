@@ -170,7 +170,7 @@
         '</div>' +
         videoHtml +
         '<div class="receta-source">' +
-          '<small>🔗 ' + (recipe.source || 'Fuente pública') + '</small>' +
+          '<small>' + (recipe.source || 'Fuente pública') + '</small>' +
         '</div>' +
       '</div>' +
     '</article>';
@@ -239,5 +239,5 @@
     initRecetas();
   }
   
-  console.log('🍳 Recetas inicializadas | Base path:', basePath);
+  console.log('Recetas inicializadas | Base path:', basePath);
 })();

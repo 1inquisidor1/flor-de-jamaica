@@ -268,7 +268,7 @@
   function renderTermCard(term, category) {
     return '<div class="glossary-term-card" data-term-id="' + term.id + '" data-category="' + category.id + '">' +
       '<div class="glossary-term-header">' +
-        '<div class="glossary-avatar">' + (category.icon || '📖') + '</div>' +
+        '<div class="glossary-avatar">[' + category.name.charAt(0) + ']</div>' +
         '<div class="glossary-info">' +
           '<h4 class="glossary-term-name">' + term.term + '</h4>' +
           '<span class="glossary-category-badge">' + category.name + '</span>' +
@@ -324,5 +324,5 @@
     initGlossary();
   }
   
-  console.log('📚 Glosario inicializado | Base path:', basePath);
+  console.log('Glosario inicializado | Base path:', basePath);
 })();

@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://flor-de-jamaica.github.io/sitemap.xml
+Sitemap: https://1inquisidor1.github.io/flor-de-jamaica/sitemap.xml
 
 # No indexar archivos sensibles
 Disallow: /*/feed.xml$

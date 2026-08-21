@@ -43,8 +43,8 @@ image: /assets/images/slider/campo-hibiscus.webp
  <h2> Recursos Gratis</h2>
  <p>Además de contactarnos, puedes acceder a nuestros materiales educativos descargables:</p>
  <ul>
- <li><a href="{{ '/assets/docs/recetario-jamaica.md' | relative_url }}"> Descargar Recetario Exclusivo (PDF)</a></li>
- <li><a href="{{ '/assets/docs/catalogo-flor-de-jamaica.md' | relative_url }}"> Descargar Catálogo de Productos (PDF)</a></li>
+ <li><a href="{{ '/assets/docs/recetario-jamaica.pdf' | relative_url }}"> Descargar Recetario de Recetas (PDF)</a></li>
+ <li><a href="{{ '/assets/docs/catalogo-flor-de-jamaica.pdf' | relative_url }}"> Descargar Catálogo de Productos (PDF)</a></li>
  </ul>
 
  <!-- Información Adicional -->

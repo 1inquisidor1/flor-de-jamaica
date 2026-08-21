@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })();
 
-  console.log('🍺 Flor de Jamaica - main.js cargado correctamente');
+  console.log('Flor de Jamaica - main.js cargado correctamente');
 
   /* ==========================================================================
      MISIÓN D: POPUP NEWSLETTER (CAPTURA DE LEADS)

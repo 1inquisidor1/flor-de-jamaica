@@ -3,7 +3,7 @@
     {
       "id": "bebida",
       "name": "Bebidas",
-      "icon": "🥤",
+      "icon": "bebida",
       "recipes": [
         {
           "id": "agua-jamaica-clasica",
@@ -63,7 +63,7 @@
     {
       "id": "postre",
       "name": "Postres",
-      "icon": "🍰",
+      "icon": "postre",
       "recipes": [
         {
           "id": "mermelada-dulce-picante",
@@ -124,7 +124,7 @@
     {
       "id": "cosmestico",
       "name": "Cosméticos",
-      "icon": "🧴",
+      "icon": "cosmetico",
       "recipes": [
         {
           "id": "mascarilla-facial",
@@ -180,7 +180,7 @@
     {
       "id": "coctel",
       "name": "Cócteles",
-      "icon": "🍸",
+      "icon": "coctel",
       "recipes": [
         {
           "id": "coctel-jamaica-ron",
