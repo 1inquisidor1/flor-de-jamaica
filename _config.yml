@@ -53,7 +53,7 @@ keep_files:
   - assets/data/faq-data.json
 
 # --- Configuración de Build ---
-incremental: true  # Construcción incremental (más rápida)
+incremental: false # Build completo para evitar HTML cacheado sin CSS (GitHub Pages)
 future: false      # No publica artículos con fecha futura
 
 # --- Variables de Acceso Global (usa {{ site.nombre_variable }} en templates) ---
