@@ -1,5 +1,5 @@
 /* ============================================================================
-   FLOR DE JAMAICA - GLOSSARY.JS
+   FLOR DE JAMAICA - GLOSSARY.JS (Optimizado para GitHub Pages)
    ============================================================================
    Funcionalidades:
    - Tooltips interactivos para términos técnicos (data-glossary attribute)
@@ -8,57 +8,76 @@
    - Navegación por categorías
    ============================================================================ */
 
-document.addEventListener('DOMContentLoaded', function () {
-  const GLOSSARY_DATA_URL = '/assets/data/glossary-data.json';
-  
-  // Almacenar datos del glosario globalmente
-  let glossaryData = null;
+(function() {
+  'use strict';
 
-  // ============================================================================
-  // 1. INICIALIZACIÓN
-  // ============================================================================
-  async function initGlossary() {
-    try {
-      const response = await fetch(GLOSSARY_DATA_URL);
-      glossaryData = await response.json();
-      
-      // Inicializar tooltips en páginas que usan términos técnicos
-      initTooltips();
-      
-      // Inicializar página de glosario si existe
-      initGlossaryPage();
-    } catch (error) {
-      console.error('Error cargando datos del glosario:', error);
+  // Detectar base path automáticamente para soportar subcarpetas en GitHub Pages
+  // Ej: https://usuario.github.io/repo/ -> /repo/
+  //     https://usuario.github.io/     -> /
+  var basePath = (function() {
+    var path = window.location.pathname;
+    var parts = path.split('/');
+    if (parts.length > 1 && parts[1] && parts[1] !== '') {
+      return '/' + parts[1] + '/';
     }
+    return '/';
+  })();
+
+  var GLOSSARY_DATA_URL = basePath + 'assets/data/glossary-data.json';
+
+  // Almacenar datos del glosario globalmente
+  var glossaryData = null;
+
+  // Inicialización
+  function initGlossary() {
+    fetch(GLOSSARY_DATA_URL)
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('HTTP error ' + response.status);
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        glossaryData = data;
+        initTooltips();
+        initGlossaryPage();
+      })
+      .catch(function(error) {
+        console.error('Error cargando datos del glosario:', error);
+        console.error('URL intentada:', GLOSSARY_DATA_URL);
+        console.error('Base path detectado:', basePath);
+
+        // Mensaje de error en la página de glosario
+        var container = document.getElementById('glossary-container');
+        if (container) {
+          container.innerHTML = '<div class="glossary-error-message">Error al cargar el glosario. Por favor, recarga la página.</div>';
+        }
+      });
   }
 
-  // ============================================================================
-  // 2. TOOLTIPS INTERACTIVOS
-  // ============================================================================
+  // Inicializar tooltips
   function initTooltips() {
-    // Buscar todos los elementos con data-glossary
-    const glossaryTerms = document.querySelectorAll('[data-glossary]');
+    var glossaryTerms = document.querySelectorAll('[data-glossary]');
     
     if (glossaryTerms.length === 0) return;
     
     glossaryTerms.forEach(function(element) {
-      const termId = element.getAttribute('data-glossary');
-      const definition = findTermDefinition(termId);
+      var termId = element.getAttribute('data-glossary');
+      var definition = findTermDefinition(termId);
       
       if (definition) {
         element.classList.add('glossary-term');
-        element.setAttribute('data-definition', definition.definition);
         element.setAttribute('aria-describedby', 'glossary-tooltip-' + termId);
         
         // Agregar indicador visual
         if (!element.querySelector('.glossary-icon')) {
-          const icon = document.createElement('span');
+          var icon = document.createElement('span');
           icon.className = 'glossary-icon';
-          icon.textContent = 'ⓘ';
+          icon.innerHTML = 'ⓘ';
           element.appendChild(icon);
         }
         
-        // Event listeners para tooltip
+        // Event listeners
         element.addEventListener('mouseenter', function() {
           showTooltip(this, definition);
         });
@@ -81,10 +100,11 @@ document.addEventListener('DOMContentLoaded', function () {
   function findTermDefinition(termId) {
     if (!glossaryData) return null;
     
-    for (const category of glossaryData.categories) {
-      for (const term of category.terms) {
-        if (term.id === termId) {
-          return term;
+    for (var i = 0; i < glossaryData.categories.length; i++) {
+      var category = glossaryData.categories[i];
+      for (var j = 0; j < category.terms.length; j++) {
+        if (category.terms[j].id === termId) {
+          return category.terms[j];
         }
       }
     }
@@ -92,29 +112,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function showTooltip(element, termData) {
-    hideTooltip(); // Ocultar tooltip anterior
+    hideTooltip();
     
-    const tooltip = document.createElement('div');
+    var tooltip = document.createElement('div');
     tooltip.id = 'glossary-tooltip';
     tooltip.className = 'glossary-tooltip';
     tooltip.setAttribute('role', 'tooltip');
     
-    // Posicionar tooltip
-    const rect = element.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var rect = element.getBoundingClientRect();
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    let tooltipTop = rect.top + scrollTop - 60;
-    let tooltipLeft = rect.left + (rect.width / 2);
+    var tooltipTop = rect.top + scrollTop - 60;
+    var tooltipLeft = rect.left + (rect.width / 2);
     
-    // Ajustar si se sale de la pantalla
     if (tooltipLeft < 150) tooltipLeft = rect.left + rect.width + 10;
     if (tooltipLeft > window.innerWidth - 350) tooltipLeft = rect.right - 340;
     
     tooltip.style.top = tooltipTop + 'px';
     tooltip.style.left = tooltipLeft + 'px';
     
-    // Contenido del tooltip
-    let html = '<div class="glossary-tooltip-header">';
+    var html = '<div class="glossary-tooltip-header">';
     html += '<strong class="glossary-tooltip-title">' + termData.term + '</strong>';
     html += '</div>';
     html += '<div class="glossary-tooltip-body">';
@@ -124,20 +141,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     html += '</div>';
     html += '<div class="glossary-tooltip-footer">';
-    html += '<a href="/glosario/" class="glossary-link">Ver glosario completo →</a>';
+    html += '<a href="' + basePath + 'glosario/" class="glossary-link">Ver glosario completo →</a>';
     html += '</div>';
     
     tooltip.innerHTML = html;
     document.body.appendChild(tooltip);
     
-    // Mostrar con animación
     setTimeout(function() {
       tooltip.classList.add('visible');
     }, 10);
   }
 
   function hideTooltip() {
-    const tooltip = document.getElementById('glossary-tooltip');
+    var tooltip = document.getElementById('glossary-tooltip');
     if (tooltip) {
       tooltip.classList.remove('visible');
       setTimeout(function() {
@@ -160,166 +176,144 @@ document.addEventListener('DOMContentLoaded', function () {
     hideTooltip();
   });
 
-  // ============================================================================
-  // 3. PÁGINA DE GLOSARIO DINÁMICO
-  // ============================================================================
+  // Inicializar página de glosario
   function initGlossaryPage() {
-    const glossaryContainer = document.getElementById('glossary-container');
-    const searchInput = document.getElementById('glossary-search');
-    const categoryButtons = document.querySelectorAll('.glossary-category-btn');
+    var container = document.getElementById('glossary-container');
+    var searchInput = document.getElementById('glossary-search');
+    var clearBtn = document.getElementById('glossary-clear-search');
+    var categoryBtns = document.querySelectorAll('.glossary-category-btn');
     
-    if (!glossaryContainer) return; // No estamos en la página de glosario
+    if (!container) return;
     
-    // Renderizar glosario completo
-    renderGlossary(glossaryData);
+    renderGlossary(glossaryData.categories);
     
-    // Evento de búsqueda
     if (searchInput) {
       searchInput.addEventListener('input', function() {
-        const query = this.value.toLowerCase();
-        renderFilteredGlossary(query);
+        var query = this.value.toLowerCase().trim();
+        if (query) {
+          filterGlossaryBySearch(query);
+        } else {
+          var activeFilter = document.querySelector('.glossary-category-btn.active').dataset.category;
+          filterGlossaryByCategory(activeFilter);
+        }
       });
     }
     
-    // Eventos de filtro por categoría
-    categoryButtons.forEach(function(btn) {
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function() {
+        if (searchInput) searchInput.value = '';
+        var activeFilter = document.querySelector('.glossary-category-btn.active').dataset.category;
+        filterGlossaryByCategory(activeFilter);
+        clearBtn.style.display = 'none';
+      });
+    }
+    
+    categoryBtns.forEach(function(btn) {
       btn.addEventListener('click', function() {
-        // Remover active de todos
-        categoryButtons.forEach(b => b.classList.remove('active'));
-        // Agregar active al clickeado
+        categoryBtns.forEach(function(b) { b.classList.remove('active'); });
         this.classList.add('active');
         
-        const category = this.getAttribute('data-category');
-        renderFilteredByCategory(category);
+        var category = this.dataset.category;
+        var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        
+        if (query) {
+          filterGlossaryBySearchAndCategory(query, category);
+        } else {
+          filterGlossaryByCategory(category);
+        }
+        
+        if (clearBtn) clearBtn.style.display = query ? 'block' : 'none';
       });
     });
   }
 
-  function renderGlossary(data) {
-    const container = document.getElementById('glossary-container');
-    if (!container || !data) return;
+  function renderGlossary(categories) {
+    var container = document.getElementById('glossary-container');
+    if (!container || !categories) return;
     
     container.innerHTML = '';
     
-    data.categories.forEach(function(category) {
-      const categoryDiv = document.createElement('div');
-      categoryDiv.className = 'glossary-category';
-      
-      let html = '<h3 class="glossary-category-title">' + category.name + '</h3>';
+    if (categories.length === 0) {
+      container.innerHTML = '<p class="glossary-no-results">No se encontraron términos.</p>';
+      return;
+    }
+    
+    var html = '';
+    
+    categories.forEach(function(category) {
+      html += '<div class="glossary-category">';
+      html += '<h3 class="glossary-category-title">' + category.name + '</h3>';
       html += '<div class="glossary-terms-grid">';
       
       category.terms.forEach(function(term) {
-        html += renderTermCard(term);
+        html += renderTermCard(term, category);
       });
       
       html += '</div>';
-      categoryDiv.innerHTML = html;
-      container.appendChild(categoryDiv);
+      html += '</div>';
+    });
+    
+    container.innerHTML = html;
+  }
+
+  function renderTermCard(term, category) {
+    return '<div class="glossary-term-card" data-term-id="' + term.id + '" data-category="' + category.id + '">' +
+      '<div class="glossary-term-header">' +
+        '<div class="glossary-avatar">' + (category.icon || '📖') + '</div>' +
+        '<div class="glossary-info">' +
+          '<h4 class="glossary-term-name">' + term.term + '</h4>' +
+          '<span class="glossary-category-badge">' + category.name + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<p class="glossary-term-definition">' + term.definition + '</p>' +
+      (term.example ? '<p class="glossary-term-example"><strong>Ejemplo:</strong> ' + term.example + '</p>' : '') +
+    '</div>';
+  }
+
+  function filterGlossaryByCategory(categoryId) {
+    var cards = document.querySelectorAll('.glossary-term-card');
+    
+    cards.forEach(function(card) {
+      if (categoryId === 'all' || card.dataset.category === categoryId) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
     });
   }
 
-  function renderTermCard(term) {
-    return `
-      <div class="glossary-term-card" data-term-id="${term.id}">
-        <div class="glossary-term-header">
-          <h4 class="glossary-term-name">${term.term}</h4>
-          <span class="glossary-category-badge">${getCategoryName(term.id)}</span>
-        </div>
-        <p class="glossary-term-definition">${term.definition}</p>
-        ${term.example ? `<p class="glossary-term-example"><strong>Ejemplo:</strong> ${term.example}</p>` : ''}
-      </div>
-    `;
-  }
-
-  function getCategoryName(termId) {
-    if (!glossaryData) return '';
-    for (const cat of glossaryData.categories) {
-      if (cat.terms.some(t => t.id === termId)) {
-        return cat.name;
-      }
-    }
-    return '';
-  }
-
-  function renderFilteredGlossary(query) {
-    const container = document.getElementById('glossary-container');
-    if (!container || !glossaryData) return;
+  function filterGlossaryBySearch(query) {
+    var cards = document.querySelectorAll('.glossary-term-card');
     
-    if (!query) {
-      renderGlossary(glossaryData);
-      return;
-    }
-    
-    container.innerHTML = '<div class="glossary-search-results">Buscando: "' + query + '"</div>';
-    
-    let foundAny = false;
-    
-    glossaryData.categories.forEach(function(category) {
-      const matchingTerms = category.terms.filter(function(term) {
-        return term.term.toLowerCase().includes(query) ||
-               term.definition.toLowerCase().includes(query);
-      });
+    cards.forEach(function(card) {
+      var name = card.querySelector('.glossary-term-name').textContent.toLowerCase();
+      var definition = card.querySelector('.glossary-term-definition').textContent.toLowerCase();
       
-      if (matchingTerms.length > 0) {
-        foundAny = true;
-        const categoryDiv = document.createElement('div');
-        categoryDiv.className = 'glossary-category';
-        
-        let html = '<h3 class="glossary-category-title">' + category.name + '</h3>';
-        html += '<div class="glossary-terms-grid">';
-        
-        matchingTerms.forEach(function(term) {
-          html += renderTermCard(term);
-        });
-        
-        html += '</div>';
-        categoryDiv.innerHTML = html;
-        container.appendChild(categoryDiv);
-      }
+      var matches = name.includes(query) || definition.includes(query);
+      card.style.display = matches ? '' : 'none';
     });
-    
-    if (!foundAny) {
-      container.innerHTML += '<p class="glossary-no-results">No se encontraron términos que coincidan con tu búsqueda.</p>';
-    }
   }
 
-  function renderFilteredByCategory(categoryName) {
-    const container = document.getElementById('glossary-container');
-    if (!container || !glossaryData) return;
+  function filterGlossaryBySearchAndCategory(query, categoryId) {
+    var cards = document.querySelectorAll('.glossary-term-card');
     
-    if (categoryName === 'all') {
-      renderGlossary(glossaryData);
-      return;
-    }
-    
-    const category = glossaryData.categories.find(c => 
-      c.name.toLowerCase() === categoryName.toLowerCase()
-    );
-    
-    if (!category) return;
-    
-    container.innerHTML = '';
-    
-    const categoryDiv = document.createElement('div');
-    categoryDiv.className = 'glossary-category';
-    
-    let html = '<h3 class="glossary-category-title">' + category.name + '</h3>';
-    html += '<div class="glossary-terms-grid">';
-    
-    category.terms.forEach(function(term) {
-      html += renderTermCard(term);
+    cards.forEach(function(card) {
+      var name = card.querySelector('.glossary-term-name').textContent.toLowerCase();
+      var definition = card.querySelector('.glossary-term-definition').textContent.toLowerCase();
+      
+      var matchesCategory = categoryId === 'all' || card.dataset.category === categoryId;
+      var matchesSearch = name.includes(query) || definition.includes(query);
+      
+      card.style.display = (matchesCategory && matchesSearch) ? '' : 'none';
     });
-    
-    html += '</div>';
-    categoryDiv.innerHTML = html;
-    container.appendChild(categoryDiv);
   }
 
-  // ============================================================================
-  // 4. INICIALIZAR
-  // ============================================================================
-  initGlossary();
+  // Inicializar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGlossary);
+  } else {
+    initGlossary();
+  }
   
-  // Para debugging
-  console.log('📚 Glosario de la Flor de Jamaica inicializado');
-});
+  console.log('📚 Glosario inicializado | Base path:', basePath);
+})();

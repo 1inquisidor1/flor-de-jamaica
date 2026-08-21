@@ -40,10 +40,10 @@ image: /assets/images/slider/campo-hibiscus.webp
     <!-- Filtros por categoría -->
     <div class="recetas-filters-bar">
       <button class="recetas-filter-btn active" data-filter="all">Todas las recetas</button>
-      <button class="recetas-filter-btn" data-filter="bebida">🥤 Bebidas</button>
-      <button class="recetas-filter-btn" data-filter="postre">🍰 Postres</button>
-      <button class="recetas-filter-btn" data-filter="cosmestico">🧴 Cosméticos</button>
-      <button class="recetas-filter-btn" data-filter="coctel">🍸 Cócteles</button>
+      <button class="recetas-filter-btn" data-filter="bebida">Bebidas</button>
+      <button class="recetas-filter-btn" data-filter="postre">Postres</button>
+      <button class="recetas-filter-btn" data-filter="cosmestico">Cosméticos</button>
+      <button class="recetas-filter-btn" data-filter="coctel">Cócteles</button>
     </div>
 
     <!-- Contenedor de recetas -->

@@ -35,7 +35,7 @@ image: /assets/images/slider/campo-hibiscus.webp
     </form>
 
     <!-- Enlace a WhatsApp -->
-    <h2>📱 Contáctanos por WhatsApp</h2>
+    <h2>Contáctanos por WhatsApp</h2>
     <p>Habla directamente con nuestro equipo para consultas rápidas o pedidos por mensaje:</p>
     <a href="https://wa.me/5215551234567" class="boton boton-primario">Abrir WhatsApp</a>
 

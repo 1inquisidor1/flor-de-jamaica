@@ -56,7 +56,7 @@ Estudios en *Phytotherapy Research* muestran que:
 
 Descarga nuestro **catálogo completo** con información detallada sobre nutrientes, usos y recomendaciones:
 
-📥 [Descargar Catálogo PDF](/assets/docs/catalogo-flor-de-jamaica.pdf)
+[Descargar Catálogo PDF](/assets/docs/catalogo-flor-de-jamaica.pdf)
 
 ---
 

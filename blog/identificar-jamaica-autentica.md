@@ -100,12 +100,12 @@ Este artículo se basa en información recopilada de fuentes científicas y educ
 
 ---
 
-## 📥 ¿Quieres más información?
+## ¿Quieres más información?
 
 Descarga nuestro **catálogo completo** con información detallada sobre nuestros productos y procesos:
 
-📥 [Descargar Catálogo PDF](/assets/docs/catalogo-flor-de-jamaica.pdf)  
-📥 [Descargar Recetario Gratis](/assets/docs/recetario-jamaica.pdf)
+[Descargar Catálogo PDF](/assets/docs/catalogo-flor-de-jamaica.pdf)  
+[Descargar Recetario Gratis](/assets/docs/recetario-jamaica.pdf)
 
 ---
 

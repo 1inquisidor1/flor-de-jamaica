@@ -1,5 +1,5 @@
 /* ============================================================================
-   FLOR DE JAMAICA - FAQ.JS
+   FLOR DE JAMAICA - FAQ.JS (Optimizado para GitHub Pages)
    ============================================================================
    Gestiona la sección de Preguntas Frecuentes con:
    - Búsqueda en tiempo real
@@ -8,81 +8,94 @@
    - Acordeón interactivo
    ============================================================================ */
 
-document.addEventListener('DOMContentLoaded', function () {
-  const FAQ_DATA_URL = '/assets/data/faq-data.json';
+(function() {
+  'use strict';
+
+  // Detectar base path automáticamente para soportar subcarpetas en GitHub Pages
+  var basePath = (function() {
+    var path = window.location.pathname;
+    var parts = path.split('/');
+    if (parts.length > 1 && parts[1] && parts[1] !== '') {
+      return '/' + parts[1] + '/';
+    }
+    return '/';
+  })();
+
+  var FAQ_DATA_URL = basePath + 'assets/data/faq-data.json';
   
-  let faqData = null;
+  var faqData = null;
 
   // Inicialización
-  async function initFaq() {
-    try {
-      const response = await fetch(FAQ_DATA_URL);
-      faqData = await response.json();
-      
-      initFaqPage();
-    } catch (error) {
-      console.error('Error cargando datos de FAQ:', error);
-      const container = document.getElementById('faq-container');
-      if (container) {
-        container.innerHTML = '<p class="faq-error">Error al cargar las preguntas frecuentes. Por favor, recarga la página.</p>';
-      }
-    }
+  function initFaq() {
+    fetch(FAQ_DATA_URL)
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('HTTP error ' + response.status);
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        faqData = data;
+        initFaqPage();
+      })
+      .catch(function(error) {
+        console.error('Error cargando datos de FAQ:', error);
+        console.error('URL intentada:', FAQ_DATA_URL);
+        console.error('Base path detectado:', basePath);
+
+        var container = document.getElementById('faq-container');
+        if (container) {
+          container.innerHTML = '<p class="faq-error">Error al cargar las preguntas frecuentes. Por favor, recarga la página.</p>';
+        }
+      });
   }
 
   // Inicializar página de FAQ
   function initFaqPage() {
-    const container = document.getElementById('faq-container');
-    const searchInput = document.getElementById('faq-search');
-    const clearBtn = document.getElementById('faq-clear-search');
-    const categoryBtns = document.querySelectorAll('.faq-category-btn');
+    var container = document.getElementById('faq-container');
+    var searchInput = document.getElementById('faq-search');
+    var clearBtn = document.getElementById('faq-clear-search');
+    var categoryBtns = document.querySelectorAll('.faq-category-btn');
     
     if (!container) return;
     
-    // Renderizar todas las FAQs
     renderFaq(faqData.categories);
     
-    // Evento de búsqueda
     if (searchInput) {
       searchInput.addEventListener('input', function() {
-        const query = this.value.toLowerCase().trim();
+        var query = this.value.toLowerCase().trim();
         if (query) {
           filterFaqBySearch(query);
         } else {
-          const activeCategory = document.querySelector('.faq-category-btn.active').dataset.category;
+          var activeCategory = document.querySelector('.faq-category-btn.active').dataset.category;
           filterFaqByCategory(activeCategory);
         }
       });
     }
     
-    // Botón de limpiar búsqueda
     if (clearBtn) {
       clearBtn.addEventListener('click', function() {
         if (searchInput) searchInput.value = '';
-        const activeCategory = document.querySelector('.faq-category-btn.active').dataset.category;
+        var activeCategory = document.querySelector('.faq-category-btn.active').dataset.category;
         filterFaqByCategory(activeCategory);
         clearBtn.style.display = 'none';
       });
     }
     
-    // Eventos de filtro por categoría
     categoryBtns.forEach(function(btn) {
       btn.addEventListener('click', function() {
-        // Remover active de todos
-        categoryBtns.forEach(b => b.classList.remove('active'));
-        // Agregar active al clickeado
+        categoryBtns.forEach(function(b) { b.classList.remove('active'); });
         this.classList.add('active');
         
-        const category = this.dataset.category;
-        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        var category = this.dataset.category;
+        var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
         
         if (query) {
-          // Aplicar ambos filtros: búsqueda + categoría
           filterFaqBySearchAndCategory(query, category);
         } else {
           filterFaqByCategory(category);
         }
         
-        // Mostrar/ocultar botón de limpiar
         if (clearBtn) clearBtn.style.display = query ? 'block' : 'none';
       });
     });
@@ -90,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Renderizar todas las FAQs
   function renderFaq(categories) {
-    const container = document.getElementById('faq-container');
+    var container = document.getElementById('faq-container');
     if (!container) return;
     
     container.innerHTML = '';
@@ -100,85 +113,66 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     
-    let html = '';
-    
+    var html = '';
     categories.forEach(function(category) {
-      html += `
-        <div class="faq-category" data-category="${category.id}">
-          <h2 class="faq-category-title">${category.icon} ${category.name}</h2>
-          <div class="faq-accordion">
-      `;
+      html += '<div class="faq-category" data-category="' + category.id + '">';
+      html += '<h2 class="faq-category-title">' + (category.icon || '') + ' ' + category.name + '</h2>';
+      html += '<div class="faq-accordion">';
       
       category.faqs.forEach(function(faq, index) {
         html += renderFaqItem(faq, category, index);
       });
       
-      html += `
-          </div>
-        </div>
-      `;
+      html += '</div>';
+      html += '</div>';
     });
     
     container.innerHTML = html;
     
-    // Inicializar eventos de acordeón después del renderizado
     initAccordion();
   }
 
   // Renderizar item de FAQ
   function renderFaqItem(faq, category, index) {
-    const isOpen = index === 0; // Primera pregunta abierta por defecto
+    var isOpen = index === 0;
+    var answerHtml = faq.answer;
     
-    // Procesar respuesta con HTML (para enlaces)
-    let answerHtml = faq.answer;
-    
-    // Agregar video tutorial si existe
     if (faq.youtube_ref) {
-      const videoUrl = getYoutubeEmbedUrl(faq.youtube_ref);
-      answerHtml += `
-        <div class="faq-video">
-          <iframe width="100%" height="180" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <small class="faq-video-fuente">Tutorial: ${faq.youtube_title}</small>
-        </div>
-      `;
+      var videoUrl = getYoutubeEmbedUrl(faq.youtube_ref);
+      answerHtml += '<div class="faq-video">' +
+        '<iframe width="100%" height="180" src="' + videoUrl + '" frameborder="0" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+        '<small class="faq-video-fuente">Tutorial: ' + (faq.youtube_title || '') + '</small>' +
+        '</div>';
     }
     
-    return `
-      <div class="faq-item" data-category="${category.id}" data-search="${faq.question.toLowerCase()} ${faq.answer.toLowerCase()}">
-        <button class="faq-question ${isOpen ? 'open' : ''}" 
-                aria-expanded="${isOpen}" 
-                aria-controls="faq-answer-${faq.id}">
-          <span class="faq-question-text">${faq.question}</span>
-          <span class="faq-icon">${isOpen ? '−' : '+'}</span>
-        </button>
-        <div id="faq-answer-${faq.id}" 
-             class="faq-answer ${isOpen ? 'open' : ''}" 
-             aria-hidden="${!isOpen}">
-          <p class="faq-answer-text">${answerHtml}</p>
-        </div>
-      </div>
-    `;
+    return '<div class="faq-item" data-category="' + category.id + '" data-search="' + (faq.question + ' ' + faq.answer).toLowerCase() + '">' +
+      '<button class="faq-question ' + (isOpen ? 'open' : '') + '" aria-expanded="' + isOpen + '" aria-controls="faq-answer-' + faq.id + '">' +
+        '<span class="faq-question-text">' + faq.question + '</span>' +
+        '<span class="faq-icon">' + (isOpen ? '−' : '+') + '</span>' +
+      '</button>' +
+      '<div id="faq-answer-' + faq.id + '" class="faq-answer ' + (isOpen ? 'open' : '') + '" aria-hidden="' + !isOpen + '">' +
+        '<p class="faq-answer-text">' + answerHtml + '</p>' +
+      '</div>' +
+    '</div>';
   }
 
   // Inicializar eventos del acordeón
   function initAccordion() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
+    var faqQuestions = document.querySelectorAll('.faq-question');
     
     faqQuestions.forEach(function(question) {
       question.addEventListener('click', function() {
-        const faqItem = this.parentElement;
-        const answer = faqItem.querySelector('.faq-answer');
-        const isOpen = this.classList.contains('open');
+        var faqItem = this.parentElement;
+        var answer = faqItem.querySelector('.faq-answer');
+        var isOpen = this.classList.contains('open');
         
-        // Toggle del estado
         if (isOpen) {
-          // Cerrar
           this.classList.remove('open');
           this.setAttribute('aria-expanded', 'false');
           answer.classList.remove('open');
           answer.setAttribute('aria-hidden', 'true');
         } else {
-          // Abrir
           this.classList.add('open');
           this.setAttribute('aria-expanded', 'true');
           answer.classList.add('open');
@@ -191,92 +185,78 @@ document.addEventListener('DOMContentLoaded', function () {
   // Obtener URL de embed de YouTube
   function getYoutubeEmbedUrl(url) {
     try {
-      const urlObj = new URL(url);
-      if (urlObj.hostname.includes('youtube.com/embed')) return url;
-      
-      if (urlObj.hostname.includes('youtube.com') || urlObj.hostname.includes('youtu.be')) {
-        let videoId = '';
-        if (urlObj.hostname.includes('youtu.be')) {
+      var urlObj = new URL(url);
+      if (urlObj.hostname.indexOf('youtube.com/embed') !== -1) {
+        return url;
+      }
+      if (urlObj.hostname.indexOf('youtube.com') !== -1 || urlObj.hostname.indexOf('youtu.be') !== -1) {
+        var videoId = '';
+        if (urlObj.hostname.indexOf('youtu.be') !== -1) {
           videoId = urlObj.pathname.substring(1);
         } else {
           videoId = urlObj.searchParams.get('v') || '';
         }
-        
         if (videoId) {
-          return `https://www.youtube.com/embed/${videoId}`;
+          return 'https://www.youtube.com/embed/' + videoId;
         }
       }
-      
       return url;
     } catch (e) {
       return url;
     }
   }
 
-  // Filtrar preguntas por categoría
+  // Filtrar FAQ
   function filterFaqByCategory(categoryId) {
-    const categoryDivs = document.querySelectorAll('.faq-category');
-    
+    var categoryDivs = document.querySelectorAll('.faq-category');
     if (categoryId === 'all') {
-      categoryDivs.forEach(div => div.style.display = '');
+      categoryDivs.forEach(function(div) { div.style.display = ''; });
     } else {
-      categoryDivs.forEach(div => {
+      categoryDivs.forEach(function(div) {
         div.style.display = div.dataset.category === categoryId ? '' : 'none';
       });
     }
   }
 
-  // Filtrar preguntas por búsqueda
   function filterFaqBySearch(query) {
-    const faqItems = document.querySelectorAll('.faq-item');
-    const searchTerm = query.toLowerCase();
-    
-    faqItems.forEach(item => {
-      const searchContent = item.dataset.search || '';
-      const matches = searchContent.includes(searchTerm);
+    var faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(function(item) {
+      var searchContent = item.dataset.search || '';
+      var matches = searchContent.indexOf(query) !== -1;
       item.style.display = matches ? '' : 'none';
     });
-    
-    // Verificar si hay resultados visibles por categoría
     checkCategoryVisibility();
   }
 
-  // Filtrar por búsqueda y categoría
   function filterFaqBySearchAndCategory(query, categoryId) {
-    const faqItems = document.querySelectorAll('.faq-item');
-    const searchTerm = query.toLowerCase();
-    
-    faqItems.forEach(item => {
-      const matchesCategory = categoryId === 'all' || item.dataset.category === categoryId;
-      const searchContent = item.dataset.search || '';
-      const matchesSearch = searchContent.includes(searchTerm);
-      
+    var faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(function(item) {
+      var matchesCategory = categoryId === 'all' || item.dataset.category === categoryId;
+      var searchContent = item.dataset.search || '';
+      var matchesSearch = searchContent.indexOf(query) !== -1;
       item.style.display = (matchesCategory && matchesSearch) ? '' : 'none';
     });
-    
     checkCategoryVisibility();
   }
 
-  // Verificar visibilidad de categorías
   function checkCategoryVisibility() {
-    const categoryDivs = document.querySelectorAll('.faq-category');
-    
-    categoryDivs.forEach(div => {
-      const items = div.querySelectorAll('.faq-item');
-      let hasVisibleItems = false;
-      
-      items.forEach(item => {
-        if (item.style.display !== 'none') {
-          hasVisibleItems = true;
-        }
+    var categoryDivs = document.querySelectorAll('.faq-category');
+    categoryDivs.forEach(function(div) {
+      var items = div.querySelectorAll('.faq-item');
+      var hasVisibleItems = false;
+      items.forEach(function(item) {
+        if (item.style.display !== 'none') hasVisibleItems = true;
       });
-      
       div.style.display = hasVisibleItems ? '' : 'none';
     });
   }
 
   // Inicializar
-  initFaq();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFaq);
+  } else {
+    initFaq();
+  }
   
-  console.log('❓ Sección de FAQ inicializada');
-});
+  console.log('❓ FAQ inicializada | Base path:', basePath);
+})();

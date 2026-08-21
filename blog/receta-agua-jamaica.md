@@ -25,7 +25,7 @@ categories: recetas
 
 ---
 
-## 👨‍🍳 Paso a Paso
+## Paso a Paso
 
 ### 1. **Infusión fría (método profesional)**
 - Coloca los cálices de Jamaica en una jarra grande.
@@ -52,11 +52,11 @@ categories: recetas
 
 ---
 
-## 📚 ¿Quieres más recetas?
+## ¿Quieres más recetas?
 
 ¡Descarga nuestro recetario gratis con 10 preparaciones únicas usando la Flor de Jamaica!
 
-📥 [Descargar Recetario Gratis](/assets/docs/recetario-jamaica.pdf)
+[Descargar Recetario Gratis](/assets/docs/recetario-jamaica.pdf)
 
 ---
 

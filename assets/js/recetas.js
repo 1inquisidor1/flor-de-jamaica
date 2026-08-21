@@ -1,5 +1,5 @@
 /* ============================================================================
-   FLOR DE JAMAICA - RECETAS.JS
+   FLOR DE JAMAICA - RECETAS.JS (Optimizado para GitHub Pages)
    ============================================================================
    Gestiona la página de recetas filtrables con:
    - Búsqueda en tiempo real
@@ -8,81 +8,94 @@
    - Enlaces a videos de YouTube verificados
    ============================================================================ */
 
-document.addEventListener('DOMContentLoaded', function () {
-  const RECETAS_DATA_URL = '/assets/data/recetas-data.json';
+(function() {
+  'use strict';
+
+  // Detectar base path automáticamente para soportar subcarpetas en GitHub Pages
+  var basePath = (function() {
+    var path = window.location.pathname;
+    var parts = path.split('/');
+    if (parts.length > 1 && parts[1] && parts[1] !== '') {
+      return '/' + parts[1] + '/';
+    }
+    return '/';
+  })();
+
+  var RECETAS_DATA_URL = basePath + 'assets/data/recetas-data.json';
   
-  let recetasData = null;
+  var recetasData = null;
 
   // Inicialización
-  async function initRecetas() {
-    try {
-      const response = await fetch(RECETAS_DATA_URL);
-      recetasData = await response.json();
-      
-      initRecetasPage();
-    } catch (error) {
-      console.error('Error cargando datos de recetas:', error);
-      const container = document.getElementById('recetas-container');
-      if (container) {
-        container.innerHTML = '<p class="recetas-error">Error al cargar las recetas. Por favor, recarga la página.</p>';
-      }
-    }
+  function initRecetas() {
+    fetch(RECETAS_DATA_URL)
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('HTTP error ' + response.status);
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        recetasData = data;
+        initRecetasPage();
+      })
+      .catch(function(error) {
+        console.error('Error cargando datos de recetas:', error);
+        console.error('URL intentada:', RECETAS_DATA_URL);
+        console.error('Base path detectado:', basePath);
+
+        var container = document.getElementById('recetas-container');
+        if (container) {
+          container.innerHTML = '<p class="recetas-error">Error al cargar las recetas. Por favor, recarga la página.</p>';
+        }
+      });
   }
 
   // Inicializar página de recetas
   function initRecetasPage() {
-    const container = document.getElementById('recetas-container');
-    const searchInput = document.getElementById('recetas-search');
-    const clearBtn = document.getElementById('recetas-clear-search');
-    const filterBtns = document.querySelectorAll('.recetas-filter-btn');
+    var container = document.getElementById('recetas-container');
+    var searchInput = document.getElementById('recetas-search');
+    var clearBtn = document.getElementById('recetas-clear-search');
+    var filterBtns = document.querySelectorAll('.recetas-filter-btn');
     
     if (!container) return;
     
-    // Renderizar todas las recetas
     renderRecetas(recetasData.categories);
     
-    // Evento de búsqueda
     if (searchInput) {
       searchInput.addEventListener('input', function() {
-        const query = this.value.toLowerCase().trim();
+        var query = this.value.toLowerCase().trim();
         if (query) {
           filterRecetasBySearch(query);
         } else {
-          const activeFilter = document.querySelector('.recetas-filter-btn.active').dataset.filter;
+          var activeFilter = document.querySelector('.recetas-filter-btn.active').dataset.filter;
           filterRecetasByCategory(activeFilter);
         }
       });
     }
     
-    // Botón de limpiar búsqueda
     if (clearBtn) {
       clearBtn.addEventListener('click', function() {
         if (searchInput) searchInput.value = '';
-        const activeFilter = document.querySelector('.recetas-filter-btn.active').dataset.filter;
+        var activeFilter = document.querySelector('.recetas-filter-btn.active').dataset.filter;
         filterRecetasByCategory(activeFilter);
         clearBtn.style.display = 'none';
       });
     }
     
-    // Eventos de filtro por categoría
     filterBtns.forEach(function(btn) {
       btn.addEventListener('click', function() {
-        // Remover active de todos
-        filterBtns.forEach(b => b.classList.remove('active'));
-        // Agregar active al clickeado
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
         this.classList.add('active');
         
-        const filter = this.dataset.filter;
-        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        var filter = this.dataset.filter;
+        var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
         
         if (query) {
-          // Aplicar ambos filtros: búsqueda + categoría
           filterRecetasBySearchAndCategory(query, filter);
         } else {
           filterRecetasByCategory(filter);
         }
         
-        // Mostrar/ocultar botón de limpiar
         if (clearBtn) clearBtn.style.display = query ? 'block' : 'none';
       });
     });
@@ -90,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Renderizar todas las recetas
   function renderRecetas(categories) {
-    const container = document.getElementById('recetas-container');
+    var container = document.getElementById('recetas-container');
     if (!container) return;
     
     container.innerHTML = '';
@@ -100,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     
-    let html = '<div class="recetas-grid">';
+    var html = '<div class="recetas-grid">';
     
     categories.forEach(function(category) {
       category.recipes.forEach(function(recipe) {
@@ -114,151 +127,117 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Renderizar tarjeta de receta
   function renderRecipeCard(recipe, category) {
-    let ingredientsList = '<ul class="receta-ingredientes">';
+    var ingredientsList = '<ul class="receta-ingredientes">';
     recipe.ingredients.forEach(function(ing) {
       ingredientsList += '<li>' + ing + '</li>';
     });
     ingredientsList += '</ul>';
     
-    let stepsList = '<ol class="receta-pasos">';
+    var stepsList = '<ol class="receta-pasos">';
     recipe.steps.forEach(function(step) {
       stepsList += '<li>' + step + '</li>';
     });
     stepsList += '</ol>';
     
-    return `
-      <article class="receta-card animar-entrada" data-category="${category.id}" data-title="${recipe.title.toLowerCase()}" data-ingredients="${recipe.ingredients.join(' ').toLowerCase()}">
-        <div class="receta-imagen">
-          ${category.icon}
-        </div>
-        <div class="receta-contenido">
-          <div class="receta-header">
-            <h3 class="receta-titulo">${recipe.title}</h3>
-            <div class="receta-meta">
-              <span class="receta-tiempo">${recipe.time}</span>
-              <span class="receta-dificultad">${recipe.difficulty}</span>
-            </div>
-          </div>
-          
-          <p class="receta-descripcion">${recipe.description}</p>
-          
-          <div class="receta-seccion">
-            <h4><span class="icon">📋</span> Ingredientes</h4>
-            ${ingredientsList}
-          </div>
-          
-          <div class="receta-seccion">
-            <h4><span class="icon">👨‍🍳</span> Preparación</h4>
-            ${stepsList}
-          </div>
-          
-          <div class="receta-video">
-            <h4><span class="icon">🎥</span> Video Tutorial</h4>
-            ${recipe.youtube_url ? 
-              `<iframe width="100%" height="200" src="${getYoutubeEmbedUrl(recipe.youtube_url)}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-               <small class="receta-video-fuente">Fuente: ${recipe.youtube_title || recipe.source}</small>` : 
-              '<p class="receta-sin-video">No hay video disponible para esta receta.</p>'
-            }
-          </div>
-          
-          <div class="receta-source">
-            <small class="aviso-pequeno">🔗 ${recipe.source || 'Fuente pública'}</small>
-          </div>
-        </div>
-      </article>
-    `;
+    var videoHtml = '';
+    if (recipe.youtube_url) {
+      var embedUrl = getYoutubeEmbedUrl(recipe.youtube_url);
+      videoHtml = '<div class="receta-video">' +
+        '<h4>Video Tutorial</h4>' +
+        '<iframe width="100%" height="200" src="' + embedUrl + '" frameborder="0" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+        '<small class="receta-video-fuente">Fuente: ' + (recipe.youtube_title || recipe.source) + '</small>' +
+        '</div>';
+    }
+    
+    return '<article class="receta-card animar-entrada" data-category="' + category.id + '" data-title="' + recipe.title.toLowerCase() + '" data-ingredients="' + recipe.ingredients.join(' ').toLowerCase() + '">' +
+      '<div class="receta-contenido">' +
+        '<div class="receta-header">' +
+          '<h3 class="receta-titulo">' + recipe.title + '</h3>' +
+          '<div class="receta-meta">' +
+            '<span class="receta-tiempo">' + recipe.time + '</span>' +
+            '<span class="receta-dificultad">' + recipe.difficulty + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<p class="receta-descripcion">' + recipe.description + '</p>' +
+        '<div class="receta-seccion">' +
+          '<h4>Ingredientes</h4>' +
+          ingredientsList +
+        '</div>' +
+        '<div class="receta-seccion">' +
+          '<h4>Preparación</h4>' +
+          stepsList +
+        '</div>' +
+        videoHtml +
+        '<div class="receta-source">' +
+          '<small>🔗 ' + (recipe.source || 'Fuente pública') + '</small>' +
+        '</div>' +
+      '</div>' +
+    '</article>';
   }
 
   // Obtener URL de embed de YouTube
   function getYoutubeEmbedUrl(url) {
     try {
-      const urlObj = new URL(url);
-      
-      // Si ya es un enlace de embed
-      if (urlObj.hostname.includes('youtube.com/embed')) {
+      var urlObj = new URL(url);
+      if (urlObj.hostname.indexOf('youtube.com/embed') !== -1) {
         return url;
       }
-      
-      // Extraer ID del video
-      if (urlObj.hostname.includes('youtube.com') || urlObj.hostname.includes('youtu.be')) {
-        let videoId = '';
-        if (urlObj.hostname.includes('youtu.be')) {
+      if (urlObj.hostname.indexOf('youtube.com') !== -1 || urlObj.hostname.indexOf('youtu.be') !== -1) {
+        var videoId = '';
+        if (urlObj.hostname.indexOf('youtu.be') !== -1) {
           videoId = urlObj.pathname.substring(1);
         } else {
           videoId = urlObj.searchParams.get('v') || '';
         }
-        
         if (videoId) {
-          return `https://www.youtube.com/embed/${videoId}`;
+          return 'https://www.youtube.com/embed/' + videoId;
         }
       }
-      
       return url;
     } catch (e) {
       return url;
     }
   }
 
-  // Filtrar recetas por categoría
+  // Filtrar recetas
   function filterRecetasByCategory(categoryId) {
-    const container = document.getElementById('recetas-container');
-    const cards = container.querySelectorAll('.receta-card');
-    
-    if (categoryId === 'all') {
-      cards.forEach(card => card.style.display = '');
-    } else {
-      cards.forEach(card => {
-        card.style.display = card.dataset.category === categoryId ? '' : 'none';
-      });
-    }
-    
-    // Verificar si hay resultados visibles
-    checkForResults();
+    var container = document.getElementById('recetas-container');
+    var cards = container.querySelectorAll('.receta-card');
+    cards.forEach(function(card) {
+      card.style.display = (categoryId === 'all' || card.dataset.category === categoryId) ? '' : 'none';
+    });
   }
 
-  // Filtrar recetas por búsqueda
   function filterRecetasBySearch(query) {
-    const container = document.getElementById('recetas-container');
-    const cards = container.querySelectorAll('.receta-card');
-    
-    cards.forEach(card => {
-      const title = card.dataset.title || '';
-      const ingredients = card.dataset.ingredients || '';
-      
-      const matches = title.includes(query) || ingredients.includes(query);
+    var container = document.getElementById('recetas-container');
+    var cards = container.querySelectorAll('.receta-card');
+    cards.forEach(function(card) {
+      var title = card.dataset.title || '';
+      var ingredients = card.dataset.ingredients || '';
+      var matches = title.indexOf(query) !== -1 || ingredients.indexOf(query) !== -1;
       card.style.display = matches ? '' : 'none';
     });
-    
-    checkForResults();
   }
 
-  // Filtrar por búsqueda y categoría combinadas
   function filterRecetasBySearchAndCategory(query, categoryId) {
-    const container = document.getElementById('recetas-container');
-    const cards = container.querySelectorAll('.receta-card');
-    
-    cards.forEach(card => {
-      const matchesCategory = categoryId === 'all' || card.dataset.category === categoryId;
-      const title = card.dataset.title || '';
-      const ingredients = card.dataset.ingredients || '';
-      const matchesSearch = title.includes(query) || ingredients.includes(query);
-      
+    var container = document.getElementById('recetas-container');
+    var cards = container.querySelectorAll('.receta-card');
+    cards.forEach(function(card) {
+      var matchesCategory = categoryId === 'all' || card.dataset.category === categoryId;
+      var title = card.dataset.title || '';
+      var ingredients = card.dataset.ingredients || '';
+      var matchesSearch = title.indexOf(query) !== -1 || ingredients.indexOf(query) !== -1;
       card.style.display = (matchesCategory && matchesSearch) ? '' : 'none';
     });
-    
-    checkForResults();
-  }
-
-  // Verificar si hay resultados visibles
-  function checkForResults() {
-    const container = document.getElementById('recetas-container');
-    const visibleCards = container.querySelectorAll('.receta-card:not([style*="display: none"])');
-    
-    // No hacer nada por ahora, pero se podría agregar un mensaje de "no results"
   }
 
   // Inicializar
-  initRecetas();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRecetas);
+  } else {
+    initRecetas();
+  }
   
-  console.log('🍳 Sección de recetas inicializada');
-});
+  console.log('🍳 Recetas inicializadas | Base path:', basePath);
+})();

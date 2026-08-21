@@ -42,7 +42,7 @@ image: /assets/images/slider/campo-hibiscus.webp
     </ul>
 
     <!-- Sección de Contacto Digital -->
-    <h2>📱 Contáctanos para Pedidos</h2>
+    <h2>Contáctanos para Pedidos</h2>
     <p>
       Si prefieres recibirla directamente, escríbenos por WhatsApp o descarga nuestro catálogo completo con información detallada de precios y promociones.
     </p>
