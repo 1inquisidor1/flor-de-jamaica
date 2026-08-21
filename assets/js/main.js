@@ -25,10 +25,19 @@ document.addEventListener('DOMContentLoaded', function () {
     function mostrarSlide(indice) {
       slides.forEach((slide, idx) => {
         slide.classList.remove('slide-activa');
-        if (dots[idx]) dots[idx].classList.remove('dot-activo');
+        slide.setAttribute('aria-hidden', idx !== indice ? 'true' : 'false');
+        if (dots[idx]) {
+          dots[idx].classList.remove('dot-activo');
+          dots[idx].setAttribute('aria-selected', idx === indice ? 'true' : 'false');
+          dots[idx].setAttribute('tabindex', idx === indice ? '0' : '-1');
+        }
       });
       slides[indice].classList.add('slide-activa');
-      if (dots[indice]) dots[indice].classList.add('dot-activo');
+      if (dots[indice]) {
+        dots[indice].classList.add('dot-activo');
+        dots[indice].setAttribute('aria-selected', 'true');
+        dots[indice].setAttribute('tabindex', '0');
+      }
       indiceActual = indice;
     }
 
@@ -56,6 +65,15 @@ document.addEventListener('DOMContentLoaded', function () {
         mostrarSlide(indice);
         iniciarRotacion(); // Reinicia el temporizador
       });
+      // Navegación por teclado: Enter y Space activan el dot
+      dot.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const indice = parseInt(this.getAttribute('data-slide'), 10);
+          mostrarSlide(indice);
+          iniciarRotacion();
+        }
+      });
     });
 
     // Pausa inteligente: hover (escritorio) y touch (móvil)
@@ -63,6 +81,25 @@ document.addEventListener('DOMContentLoaded', function () {
     slider.addEventListener('mouseleave', iniciarRotacion);
     slider.addEventListener('touchstart', detenerRotacion, { passive: true });
     slider.addEventListener('touchend', iniciarRotacion, { passive: true });
+
+    // Navegación por teclado del slider (flechas izquierda/derecha)
+    slider.addEventListener('keydown', function (e) {
+      if (e.target.closest('.dot')) {
+        // Si el foco está en un dot, dejamos que el keydown del dot lo maneje
+        return;
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const anterior = (indiceActual - 1 + slides.length) % slides.length;
+        mostrarSlide(anterior);
+        iniciarRotacion();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const siguiente = (indiceActual + 1) % slides.length;
+        mostrarSlide(siguiente);
+        iniciarRotacion();
+      }
+    });
 
     // Inicializar
     if (slides.length > 0) {

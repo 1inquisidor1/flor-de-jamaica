@@ -3,6 +3,7 @@ layout: post
 title: "Los beneficios científicos de la Flor de Jamaica para tu salud"
 description: "Descubre qué dice la ciencia moderna sobre los efectos positivos de esta flor milenaria"
 date: 2025-04-03 10:00:00 -0600
+permalink: /blog/beneficios-cientificos-jamaica/
 categories: beneficios salud
 ---
 

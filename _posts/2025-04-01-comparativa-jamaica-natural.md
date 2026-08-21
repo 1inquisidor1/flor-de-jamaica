@@ -3,6 +3,7 @@ layout: post
 title: "¿Por qué elegir la Flor de Jamaica natural? Calidad sobre todo"
 description: "Descubre las diferencias entre la Flor de Jamaica natural y las versiones procesadas"
 date: 2025-04-01 10:00:00 -0600
+permalink: /blog/comparativa-jamaica-natural/
 categories: calidad natural
 ---
 

@@ -3,6 +3,7 @@ layout: post
 title: "¿Jamaica real o aditivada? Cómo identificar una Flor de Jamaica auténtica"
 description: "Guía para reconocer la Jamaica natural de la versión procesada con aditivos químicos"
 date: 2025-04-05 10:00:00 -0600
+permalink: /blog/identificar-jamaica-autentica/
 categories: calidad productos
 ---
 

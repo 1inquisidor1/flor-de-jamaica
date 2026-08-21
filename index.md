@@ -6,11 +6,11 @@ image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 <!-- Sección Hero: Slider de Imágenes -->
-<section class="hero-slider" id="hero-slider">
+<section class="hero-slider" id="hero-slider" role="group" aria-label="Carrusel de imágenes destacadas" aria-roledescription="carousel" tabindex="0">
  <div class="slider-contenedor">
  
  <!-- Slide 1: Campo con flores -->
- <div class="slide slide-activa">
+ <div class="slide slide-activa" role="group" aria-label="Slide 1 de 3" aria-hidden="false">
  <img src="{{ '/assets/images/slider/campo-hibiscus.webp' | relative_url }}" alt="Flores de Jamaica en campo" width="1920" height="800">
  <div class="slide-texto">
  <h1 class="slide-titulo">La flor que cautiva</h1>
@@ -19,7 +19,7 @@ image: /assets/images/slider/campo-hibiscus.webp
  </div>
 
  <!-- Slide 2: Flor individual close-up -->
- <div class="slide">
+ <div class="slide" role="group" aria-label="Slide 2 de 3" aria-hidden="true">
  <img src="{{ '/assets/images/slider/flor-hibiscus-jamaica.webp' | relative_url }}" alt="Flor de Jamaica close-up" loading="lazy" width="1920" height="800">
  <div class="slide-texto">
  <h1 class="slide-titulo">Naturaleza en cada pétalo</h1>
@@ -28,7 +28,7 @@ image: /assets/images/slider/campo-hibiscus.webp
  </div>
 
  <!-- Slide 3: Bebida (Agua de Jamaica) -->
- <div class="slide">
+ <div class="slide" role="group" aria-label="Slide 3 de 3" aria-hidden="true">
  <img src="{{ '/assets/images/slider/agua-de-jamaica.webp' | relative_url }}" alt="Agua de Jamaica en vaso" loading="lazy" width="1920" height="800">
  <div class="slide-texto">
  <h1 class="slide-titulo">Tradición y salud</h1>
@@ -39,10 +39,10 @@ image: /assets/images/slider/campo-hibiscus.webp
  </div>
 
  <!-- Controles: Indicadores (dots) -->
- <div class="slider-controles">
- <button class="dot dot-activo" data-slide="0" aria-label="Ir a slide 1"></button>
- <button class="dot" data-slide="1" aria-label="Ir a slide 2"></button>
- <button class="dot" data-slide="2" aria-label="Ir a slide 3"></button>
+ <div class="slider-controles" role="tablist" aria-label="Controles del carrusel de imágenes">
+  <button class="dot dot-activo" data-slide="0" role="tab" aria-label="Ir al slide 1" aria-selected="true" tabindex="0"></button>
+  <button class="dot" data-slide="1" role="tab" aria-label="Ir al slide 2" aria-selected="false" tabindex="-1"></button>
+  <button class="dot" data-slide="2" role="tab" aria-label="Ir al slide 3" aria-selected="false" tabindex="-1"></button>
  </div>
 </section>
 

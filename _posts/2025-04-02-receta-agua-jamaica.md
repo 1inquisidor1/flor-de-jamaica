@@ -3,6 +3,7 @@ layout: post
 title: "Guía definitiva para preparar el agua de Jamaica perfecta"
 description: "Aprende los secretos profesionales para preparar un agua de Jamaica crujiente y lleno de sabor"
 date: 2025-04-02 10:00:00 -0600
+permalink: /blog/receta-agua-jamaica/
 categories: recetas
 ---
 
