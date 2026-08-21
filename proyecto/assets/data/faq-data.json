@@ -1,0 +1,144 @@
+{
+  "categories": [
+    {
+      "id": "producto",
+      "name": "Producto y Compra",
+      "icon": "🛒",
+      "faqs": [
+        {
+          "id": "producto-autentica",
+          "question": "¿Cómo puedo identificar una Flor de Jamaica 100% auténtica?",
+          "answer": "La Flor de Jamaica auténtica tiene un color rojo intenso uniforme, textura fibrosa pero firme, y su aroma es ligeramente floral y frutal. Al prepararla, libera un color profundo sin necesidad de aditivos. Si ves flores muy blancas o con manchas anormales, podría indicar adulteración. Te recomendamos revisar nuestra guía completa en [¿Jamaica real o aditivada?](/blog/identificar-jamaica-autentica/).",
+          "youtube_ref": "https://www.youtube.com/watch?v=leYw473ET4o",
+          "youtube_title": "Como Hacer Agua de Jamaica, Receta facil"
+        },
+        {
+          "id": "producto-compra",
+          "question": "¿Dónde puedo comprar la Flor de Jamaica natural?",
+          "answer": "Puedes adquirir nuestra Flor de Jamaica en puntos de venta asociados. <a href='/donde-comprar/' class='faq-link'>Haz clic aquí para ver la lista completa</a>. También puedes pedir directamente por <a href='https://wa.me/5215551234567' class='faq-link'>WhatsApp</a> o seguirnos en <a href='https://instagram.com/flor_jamaica_oficial' class='faq-link'>Instagram</a> para conocer promociones.",
+          "youtube_ref": "https://www.youtube.com/watch?v=ZYoJUURxjrw",
+          "youtube_title": "Cómo Hacer AGUA DE JAMAICA Rápida y Fácil"
+        },
+        {
+          "id": "producto-almacenamiento",
+          "question": "¿Cómo debo almacenar mi Flor de Jamaica?",
+          "answer": "Guarda tus flores de Jamaica en un recipiente hermético, en un lugar fresco y oscuro, alejado de la humedad. Evita la luz solar directa. Si la mantienes así, conserva sus propiedades por hasta 12 meses. Te recomendamos usar dentro de su fecha de caducidad para obtener el mejor sabor y calidad.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        },
+        {
+          "id": "producto-certificaciones",
+          "question": "¿Cuenta con certificaciones de calidad?",
+          "answer": "Nuestra Flor de Jamaica cumple con las normas de calidad establecidas por las autoridades sanitarias locales. Además, sigue protocolos de cultivo sostenible sin uso de agroquímicos. Para información detallada sobre certificaciones específicas, contáctanos a través de <a href='/contacto/' class='faq-link'>nuestro formulario</a>.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        }
+      ]
+    },
+    {
+      "id": "recetas",
+      "name": "Recetas y Preparación",
+      "icon": "👨‍🍳",
+      "faqs": [
+        {
+          "id": "receta-agua-perfecta",
+          "question": "¿Cómo preparo el agua de Jamaica perfecta?",
+          "answer": "La receta clásica es sencilla: hierve 2 tazas de flores de Jamaica en 8 tazas de agua durante 5-7 minutos. Cuela y añade azúcar al gusto. <a href='/recetas/' class='faq-link'>Descubre más recetas validadas</a> con videos tutoriales en nuestra sección de recetas. <a href='https://www.youtube.com/watch?v=leYw473ET4o' class='faq-link' target='_blank'>Video tutorial</a>.",
+          "youtube_ref": "https://www.youtube.com/watch?v=leYw473ET4o",
+          "youtube_title": "Como Hacer Agua de Jamaica, Receta facil"
+        },
+        {
+          "id": "receta-endulzante",
+          "question": "¿Puedo endulzar el agua de Jamaica con miel o stevia?",
+          "answer": "¡Sí! Puedes usar miel, stevia, agave o cualquier edulcorante natural. La miel aporta un toque floral adicional, mientras que la stevia es ideal para una versión sin calorías. Ten en cuenta que el endulzante puede alterar ligeramente el sabor, así que siempre ajusta al gusto.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        },
+        {
+          "id": "receta-almacenamiento",
+          "question": "¿Cuánto dura el agua de Jamaica en la nevera?",
+          "answer": "El agua de Jamaica bien preparada y almacenada en un recipiente hermético dura hasta 3-4 días en la nevera. Para mayor conservación, puedes preparar un concentrado más fuerte y diluirlo al momento de servir. <a href='https://www.youtube.com/watch?v=ZYoJUURxjrw' class='faq-link' target='_blank'>Ver técnica rápida</a>.",
+          "youtube_ref": "https://www.youtube.com/watch?v=ZYoJUURxjrw",
+          "youtube_title": "Cómo Hacer AGUA DE JAMAICA Rápida y Fácil"
+        },
+        {
+          "id": "receta-postres",
+          "question": "¿Se puede usar la Jamaica en postres?",
+          "answer": "¡Absolutamente! La Jamaica se usa en mermeladas, galletas, helados, gelatinas y más. Prueba nuestra <a href='/assets/docs/recetario-jamaica.pdf' class='faq-link'>receta de mermelada dulce y picante</a> o descubre otras preparaciones en nuestra sección de recetas. <a href='/recetas/?filter=postre' class='faq-link'>Ver recetas de postres</a>.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        }
+      ]
+    },
+    {
+      "id": "salud",
+      "name": "Salud y Beneficios",
+      "icon": "🩺",
+      "faqs": [
+        {
+          "id": "salud-presion",
+          "question": "¿Es seguro para personas con presión arterial alta?",
+          "answer": "La Flor de Jamaica tiene propiedades vasodilatadoras que pueden ayudar a reducir la presión arterial. Sin embargo, si tomas medicamentos para la presión, consulta con tu médico antes de incluirla regularmente en tu dieta. En cantidades moderadas (1-2 tazas diarias), es seguro para la mayoría de las personas. <a href='/blog/beneficios-cientificos-jamaica/' class='faq-link'>Ver estudio científico</a>.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        },
+        {
+          "id": "salud-consumo",
+          "question": "¿Puedo tomar agua de Jamaica todos los días?",
+          "answer": "Sí, en cantidades moderadas (1-2 tazas diarias) es seguro para consumo regular. Es una excelente bebida refrescante que aporta antioxidantes y ayuda a la hidratación. Sin embargo, si eres embarazada o tienes alguna condición médica específica, consulta con tu profesional de la salud primero.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        },
+        {
+          "id": "salud-embarazo",
+          "question": "¿Es segura para embarazadas?",
+          "answer": "La mayoría de las embarazadas pueden consumir agua de Jamaica en pequeñas cantidades (½ taza al día). Sin embargo, debido a su efecto diurético y potencial interacción con ciertos medicamentos, se recomienda consultar con tu médico antes de incluirla regularmente durante el embarazo.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        },
+        {
+          "id": "salud-medicamentos",
+          "question": "¿Interfiere con algún medicamento?",
+          "answer": "La Jamaica puede interactuar con medicamentos para la presión arterial y diuréticos. Si tomas alguno de estos medicamentos, es importante consultar con tu médico antes de consumirla regularmente. <strong>Nota:</strong> Esta información no constituye consejo médico. <a href='/glosario/' class='faq-link'>Ver glosario técnico</a>.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        }
+      ]
+    },
+    {
+      "id": "gastronomia",
+      "name": "Gastronomía y Usos",
+      "icon": "🍽️",
+      "faqs": [
+        {
+          "id": "gastronomia-colorante",
+          "question": "¿Puedo usar la Jamaica como colorante natural?",
+          "answer": "¡Sí! La Jamaica es un excelente colorante natural que da un tono rojo intenso a bebidas, postres y más. El agua de Jamaica concentrada puede usarse como base para gelatines, helados y repostería. El color se intensifica con más flores y menor dilución.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        },
+        {
+          "id": "gastronomia-flores",
+          "question": "¿Las flores de Jamaica usadas se pueden comer?",
+          "answer": "Sí, las flores de Jamaica usadas (cálices) son comestibles. Se usan comúnmente para preparar guisos, rellenos para tacos, o en combinaciones con otros vegetales. <a href='/uses/' class='faq-link'>Ver más usos culinarios</a>.",
+          "youtube_ref": "",
+          "youtube_title": ""
+        },
+        {
+          "id": "gastronomia-coctel",
+          "question": "¿Cómo hacer un cóctel con Jamaica?",
+          "answer": "El cóctel de Jamaica con ron es clásico en muchos países. Prepara el agua de Jamaica, agrega ron blanco y un toque de limón. <a href='/recetas/' class='faq-link'>Ver receta completa</a> con video tutorial. <a href='https://www.youtube.com/watch?v=example_coctel' class='faq-link' target='_blank'>Video tutorial</a>.",
+          "youtube_ref": "https://www.youtube.com/watch?v=example_coctel",
+          "youtube_title": "Cóctel de Jamaica con ron - Receta tropical"
+        },
+        {
+          "id": "gastronomia-vegano",
+          "question": "¿Es apto para dietas veganas?",
+          "answer": "Sí, la Flor de Jamaica es naturalmente vegana y apta para vegetarianos. Todas nuestras recetas de bebidas, postres y cosméticos son 100% vegetales. ¡Perfecto para incluir en tu dieta vegana!",
+          "youtube_ref": "",
+          "youtube_title": ""
+        }
+      ]
+    }
+  ]
+}
