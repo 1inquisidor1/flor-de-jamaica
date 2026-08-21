@@ -1,0 +1,37 @@
+<!-- Popup Newsletter: Captura de leads con lead magnet gratuito -->
+<div class="popup-overlay" id="popup-newsletter">
+  <div class="popup-contenido">
+    <button class="popup-cerrar" id="btn-cerrar-popup" aria-label="Cerrar popup">✕</button>
+    
+    <div class="popup-imagen">
+      <!-- Imagen ilustrativa del recetario -->
+      <div class="popup-ilustracion">📖</div>
+    </div>
+    
+    <div class="popup-texto">
+      <h3 class="popup-titulo">¡Recibo GRATIS: 10 Recetas con Flor de Jamaica!</h3>
+      <p class="popup-subtitulo">
+        Suscríbete y descarga nuestro recetario exclusivo con bebidas, postres y tratamientos caseros
+      </p>
+      
+      <!-- Formulario de suscripción -->
+      <form id="form-suscripcion" action="https://formspree.io/f/mqkndjkr" method="POST">
+        <input 
+          type="email" 
+          name="_replyto" 
+          placeholder="Tu correo electrónico" 
+          required 
+          class="popup-input"
+        >
+        <button type="submit" class="boton boton-primario popup-boton">Descargar ahora</button>
+      </form>
+      
+      <p class="popup-promesa">
+        📥 Recibirás el recetario PDF inmediatamente. <br>
+        No te enviamos spam. Puedes darte de baja en cualquier momento.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Nota: La lógica del popup (mostrar, ocultar, cookie) se gestiona en assets/js/main.js -->

@@ -59,8 +59,11 @@
   <!-- Footer -->
   {% include footer.html %}
 
+  <!-- Popup Newsletter -->
+  {% include popup-newsletter.html %}
+
   <!-- JavaScript principal: defer permite que el HTML se descargue y renderice
        sin bloqueos, ejecutando el script solo cuando el DOM está listo. -->
-  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

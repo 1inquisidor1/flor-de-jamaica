@@ -186,5 +186,102 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })();
 
-  console.log('🌺 Flor de Jamaica - main.js cargado correctamente');
+  console.log('🍺 Flor de Jamaica - main.js cargado correctamente');
+
+  /* ==========================================================================
+     MISIÓN D: POPUP NEWSLETTER (CAPTURA DE LEADS)
+     ========================================================================== */
+  (function initPopupNewsletter() {
+    const popup = document.getElementById('popup-newsletter');
+    const btnCerrar = document.getElementById('btn-cerrar-popup');
+    const formSuscripcion = document.getElementById('form-suscripcion');
+
+    if (!popup || !btnCerrar) return;
+
+    const COOKIE_NAME = 'newsletter_popup_closed';
+    const COOKIE_EXPIRES_DAYS = 30;
+
+    // Verificar si el popup fue cerrado recientemente
+    function popupFueCerrado() {
+      const match = document.cookie.match(new RegExp('(^| )' + COOKIE_NAME + '=([^;]+)'));
+      if (!match) return false;
+      
+      const expiracion = parseInt(match[2]);
+      const ahora = new Date().getTime();
+      return (ahora - expiracion) < (COOKIE_EXPIRES_DAYS * 24 * 60 * 60 * 1000);
+    }
+
+    // Establecer cookie de cierre
+    function establecerCookieCierre() {
+      const expiracion = new Date();
+      expiracion.setTime(expiracion.getTime() + (COOKIE_EXPIRES_DAYS * 24 * 60 * 60 * 1000));
+      document.cookie = COOKIE_NAME + "=" + expiracion.getTime() + 
+                        ";expires=" + expiracion.toUTCString() + 
+                        ";path=/;SameSite=Lax";
+    }
+
+    // Mostrar popup
+    function mostrarPopup() {
+      if (popupFueCerrado()) return;
+      popup.classList.add('activo');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Ocultar popup
+    function ocultarPopup() {
+      popup.classList.remove('activo');
+      document.body.style.overflow = '';
+      establecerCookieCierre();
+    }
+
+    // Mostrar después de 2 segundos (no intrusivo)
+    setTimeout(mostrarPopup, 2000);
+
+    // Eventos de cierre
+    btnCerrar.addEventListener('click', ocultarPopup);
+
+    // Cerrar al hacer clic fuera del contenido
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        ocultarPopup();
+      }
+    });
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && popup.classList.contains('activo')) {
+        ocultarPopup();
+      }
+    });
+
+    // Envío del formulario
+    if (formSuscripcion) {
+      formSuscripcion.addEventListener('submit', function(e) {
+        const emailInput = this.querySelector('[name="_replyto"]');
+        const email = emailInput ? emailInput.value.trim() : '';
+        
+        // Validación básica de email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          e.preventDefault();
+          alert('Por favor, introduce un correo electrónico válido.');
+          emailInput.focus();
+          return false;
+        }
+
+        // El formulario se enviará normalmente a Formspree
+        // Opcional: puedes añadir un indicador visual de envío
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
+
+        // Si el envío falla, restaurar el botón
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }, 5000);
+      });
+    }
+  })();
 });
