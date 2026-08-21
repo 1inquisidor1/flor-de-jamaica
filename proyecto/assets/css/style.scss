@@ -1320,3 +1320,53 @@ form {
 .cta-compra .boton {
   min-width: 160px;
 }
+
+// ============================================================================
+// 16. AVISOS LEGALES EN ARTÍCULOS DE BLOG
+// ============================================================================
+
+.aviso-legal-pequeno {
+  background: var(--crema);
+  border-left: 4px solid var(--verde-hoja);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  margin: var(--spacing-xl) 0;
+
+  p {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #777;
+    margin-bottom: 0;
+
+    strong {
+      color: var(--rojo-profundo);
+    }
+  }
+}
+
+// Enlaces de referencia en blog
+.referencias-blog {
+  background: var(--gris-claro);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+
+  h3 {
+    color: var(--rojo-profundo);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 8px;
+    }
+  }
+
+  a {
+    color: var(--verde-hoja);
+    font-weight: 500;
+  }
+}

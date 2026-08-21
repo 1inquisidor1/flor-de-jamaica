@@ -51,6 +51,17 @@ description: "Artículos sobre la Flor de Jamaica, sus usos y beneficios"
         <a href="{{ '/blog/beneficios-cientificos-jamaica/' | relative_url }}" class="tarjeta-boton">Descubrir más →</a>
       </article>
 
+      <!-- Artículo 4 -->
+      <article class="tarjeta animar-entrada">
+        <div class="tarjeta-icono">🕵️</div>
+        <h3 class="tarjeta-titulo">¿Jamaica real o aditivada?</h3>
+        <p class="tarjeta-descripcion">
+          Aprende a identificar si estás consumiendo una Flor de Jamaica 
+          auténtica o una versión con aditivos químicos.
+        </p>
+        <a href="{{ '/blog/identificar-jamaica-autentica/' | relative_url }}" class="tarjeta-boton">Guía completa →</a>
+      </article>
+
     </div>
 
     <hr>
