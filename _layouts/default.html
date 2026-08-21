@@ -224,11 +224,14 @@
 </head>
 
 <body>
+  <!-- Skip link para usuarios de teclado -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
   <!-- Header y Navegación -->
   {% include header.html %}
 
   <!-- Contenido Principal -->
-  <main class="contenido-principal" role="main">
+  <main class="contenido-principal" id="main-content" role="main">
     {{ content }}
   </main>
 
