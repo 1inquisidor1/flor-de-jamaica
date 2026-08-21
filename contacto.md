@@ -25,13 +25,25 @@ image: /assets/images/slider/campo-hibiscus.webp
  <!-- Formulario de Contacto -->
  <h2> Envíanos un Mensaje</h2>
  <form action="https://formspree.io/f/mqkndjkr" method="POST">
- <div class="form-grid">
- <input type="text" name="nombre" placeholder="Tu nombre completo" required>
- <input type="email" name="_replyto" placeholder="Tu correo electrónico" required>
- </div>
- <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)">
- <textarea name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
- <button type="submit" class="boton boton-primario">Enviar mensaje</button>
+  <div class="form-grid">
+    <div>
+      <label for="nombre" class="sr-only">Tu nombre completo</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required aria-label="Tu nombre completo" autocomplete="name">
+    </div>
+    <div>
+      <label for="email" class="sr-only">Tu correo electrónico</label>
+      <input type="email" id="email" name="_replyto" placeholder="Tu correo electrónico" required aria-label="Tu correo electrónico" autocomplete="email">
+    </div>
+  </div>
+  <div>
+    <label for="telefono" class="sr-only">Tu número de teléfono (opcional)</label>
+    <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono (opcional)" aria-label="Tu número de teléfono (opcional)" autocomplete="tel">
+  </div>
+  <div>
+    <label for="mensaje" class="sr-only">¿En qué podemos ayudarte?</label>
+    <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required aria-label="Tu mensaje"></textarea>
+  </div>
+  <button type="submit" class="boton boton-primario">Enviar mensaje</button>
  </form>
 
  <!-- Enlace a WhatsApp -->
