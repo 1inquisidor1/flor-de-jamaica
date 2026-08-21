@@ -2,6 +2,7 @@
 layout: page
 title: "Glosario Técnico"
 description: "Diccionario de términos técnicos sobre la Flor de Jamaica"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 <section class="page-hero">

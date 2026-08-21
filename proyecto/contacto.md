@@ -2,6 +2,7 @@
 layout: page
 title: "Contacto"
 description: "Contáctanos para más información sobre la Flor de Jamaica"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 <section class="page-hero">

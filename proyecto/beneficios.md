@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "Beneficios"
-description: "Beneficios para la salud con respaldo científico"
+description: "Beneficios para la salud de la Flor de Jamaica: presión arterial, antioxidantes, digestión, diurético, con respaldo científico"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 Lejos de ser solo una tradición ancestral, múltiples estudios científicos han evaluado y respaldado los efectos positivos de la flor de Jamaica. Aquí exploramos los beneficios más documentados por la investigación moderna.

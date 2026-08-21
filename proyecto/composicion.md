@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "Composición"
-description: "Análisis nutricional y compuestos bioactivos de la Flor de Jamaica"
+description: "Análisis nutricional completo: calcio, potasio, vitamina C y antocianinas de la Flor de Jamaica. Composición química y beneficios bioactivos"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 El valor de la flor de Jamaica va mucho más allá de su atractivo visual. Su composición química es la base de sus reconocidos beneficios para la salud. Veamos en detalle qué hace que esta flor sea tan especial a nivel nutricional.

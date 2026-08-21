@@ -2,6 +2,7 @@
 layout: page
 title: "Testimonios"
 description: "Historias reales de personas que han transformado su rutina con la Flor de Jamaica"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 <section class="page-hero">

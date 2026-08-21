@@ -1,4 +1,22 @@
+# robots.txt para Flor de Jamaica
+# Mejora el SEO permitiendo el rastreo de todo el contenido
+
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+# Sitemap
+Sitemap: https://flor-de-jamaica.github.io/sitemap.xml
+
+# No indexar archivos sensibles
+Disallow: /*/feed.xml$
+Disallow: /*/*.json$
+
+# Optimización de crawl delay
+Crawl-delay: 10
+
+# User-agent specific
+User-agent: Googlebot
+Disallow: /*?*
+
+User-agent: Bingbot
+Disallow: /*?*

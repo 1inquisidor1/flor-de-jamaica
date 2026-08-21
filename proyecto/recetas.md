@@ -2,6 +2,7 @@
 layout: page
 title: "Recetas con Jamaica"
 description: "Descubre las mejores recetas con Flor de Jamaica: bebidas, postres, cócteles y más"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 <section class="page-hero">

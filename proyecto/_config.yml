@@ -55,5 +55,11 @@ social:
 # _layouts/default.html usando absolute_url, no desde estas variables.
 og_type: "website"
 
+# --- Sitemap Configuration ---
+# El sitemap se genera automáticamente con jekyll-sitemap
+# Se pueden excluir páginas sensibles o de bajo valor
+sitemap_exclude:
+  - "/popup-newsletter/"
+
 # --- Logo para jekyll-seo-tag ---
 logo: /assets/images/slider/campo-hibiscus.webp

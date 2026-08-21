@@ -2,6 +2,7 @@
 layout: page
 title: "Dónde Encontrarnos"
 description: "Descubre dónde comprar la Flor de Jamaica natural más calidad"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 <section class="page-hero">

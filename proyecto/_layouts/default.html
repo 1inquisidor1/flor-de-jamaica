@@ -1,50 +1,223 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'es' }}">
+<html lang="{{ site.lang | default: 'es' }}" lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description | escape }}{% endif %}">
   <meta name="theme-color" content="#B71F3E">
-
-  <!-- Open Graph - Redes Sociales (WhatsApp, Facebook, etc.) -->
-  <meta property="og:title" content="{{ page.title | default: site.title }}">
-  <meta property="og:description" content="{{ page.description | default: site.description }}">
-  <meta property="og:image" content="{{ '/assets/images/slider/campo-hibiscus.webp' | absolute_url }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="{{ site.title }}">
-  <meta property="og:locale" content="es_ES">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
-  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
-  <meta name="twitter:image" content="{{ '/assets/images/slider/campo-hibiscus.webp' | absolute_url }}">
-
-  <!-- Favicon (múltiples tamaños) -->
-  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/iconos/favicon.ico' | relative_url }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/iconos/favicon-32.png' | relative_url }}">
-  <link rel="icon" type="image/png" sizes="64x64" href="{{ '/assets/images/iconos/favicon-64.png' | relative_url }}">
-
-  <!-- Título dinámico -->
-  <title>
-    {% if page.title %}
-      {{ page.title }} | {{ site.title }}
-    {% else %}
-      {{ site.title }} - {{ site.tagline }}
-    {% endif %}
-  </title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Estilos principales -->
+  <!-- Estilos CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
   <!-- SEO Plugin -->
   {% seo %}
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "alternateName": "Flor de Jamaica Natural",
+    "description": "{{ site.description }}",
+    "url": "{{ site.url | default: site.baseurl | default: '' }}",
+    "logo": "{{ '/assets/images/iconos/favicon-32.png' | absolute_url }}",
+    "sameAs": [
+      "https://instagram.com/flor_jampaica_oficial",
+      "https://wa.me/5215551234567"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "name": "Atención al Cliente Flor de Jamaica",
+      "email": "contacto@flordejamaica.com",
+      "contactType": "customer service",
+      "areaServed": "MX",
+      "availableLanguage": ["Spanish", "English"]
+    }]
+  }
+  </script>
+
+  <!-- Schema.org para página actual según tipo -->
+  {% if page.layout == 'post' %}
+  <!-- Schema para artículos de blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}"
+    },
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page.description | escape }}",
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | date_to_xmlschema }}",
+    "author": {
+      "@type": "Organization",
+      "name": "{{ site.author }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ '/assets/images/iconos/favicon-32.png' | absolute_url }}"
+      }
+    },
+    "image": "{{ '/assets/images/slider/campo-hibiscus.webp' | absolute_url }}",
+    "keywords": "Flor de Jamaica, Hibiscus sabdariffa, beneficios, recetas, jamaica natural, antioxidantes",
+    "articleSection": "Blog",
+    "inLanguage": "es-ES"
+  }
+  </script>
+  {% endif %}
+
+  <!-- Schema para FAQ -->
+  {% if page.url == '/faq/' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cómo puedo identificar una Flor de Jamaica 100% auténtica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Flor de Jamaica auténtica tiene un color rojo intenso uniforme, textura fibrosa pero firme, y su aroma es ligeramente floral y frutal. Al prepararla, libera un color profundo sin necesidad de aditivos. Te recomendamos revisar nuestra guía completa en el blog."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde puedo comprar la Flor de Jamaica natural?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Puedes adquirir nuestra Flor de Jamaica en puntos de venta asociados, por WhatsApp o seguir nuestras redes sociales para conocer promociones."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es seguro para personas con presión arterial alta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La Flor de Jamaica tiene propiedades vasodilatadoras que pueden ayudar a reducir la presión arterial. Sin embargo, si tomas medicamentos, consulta con tu médico antes de incluirla regularmente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo preparo el agua de Jamaica perfecta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hierve 2 tazas de flores de Jamaica en 8 tazas de agua por 5-7 minutos. Cuela y añade azúcar al gusto. Descubre más recetas en nuestra sección de recetas."
+        }
+      }
+    ]
+  }
+  </script>
+  {% endif %}
+
+  <!-- Schema para Producto Principal -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Flor de Jamaica Natural",
+    "image": "{{ '/assets/images/slider/campo-hibiscus.webp' | absolute_url }}",
+    "description": "Flor de Jamaica (Hibiscus sabdariffa) natural 100%, sin aditivos, cultivada sosteniblemente. Ideal para bebidas, recetas y usos cosméticos.",
+    "sku": "JAMAICA-NAT-001",
+    "brand": {
+      "@type": "Brand",
+      "name": "Flor de Jamaica Natural"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "{{ '/donde-comprar/' | absolute_url }}",
+      "priceCurrency": "MXN",
+      "price": "0",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "businessFunction": "https://schema.org/LeaseOut",
+      "seller": {
+        "@type": "Organization",
+        "name": "{{ site.title }}"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "42"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "María G."
+        },
+        "reviewBody": "Llevo 3 meses consumiendo agua de Jamaica natural y he notado mejora en mi presión arterial.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Carlos R."
+        },
+        "reviewBody": "La mermelada de Jamaica se convirtió en el postre estrella de mis fiestas familiares.",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema para datos estructurados de sitio web -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url | default: site.baseurl | default: '' }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url | default: site.baseurl | default: '' }}/glosario/?q={search_term_string}",
+      "query-input": "required text"
+    }
+  }
+  </script>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Open Graph - Redes Sociales -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/slider/campo-hibiscus.webp' | absolute_url }}{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/slider/campo-hibiscus.webp' | absolute_url }}{% endif %}">
+  <meta name="twitter:site" content="@flor_jamaica_oficial">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{{ '/assets/images/iconos/favicon.ico' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/iconos/favicon-32.png' | relative_url }}">
 </head>
 
 <body>

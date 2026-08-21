@@ -1,7 +1,8 @@
 ---
 layout: home
 title: "Flor de Jamaica - Elegancia Natural"
-description: "Descubre la belleza, propiedades y usos de esta flor excepcional"
+description: "Descubre la belleza, propiedades y usos de la Flor de Jamaica: bebidas, recetas, beneficios y más. ¡Naturaleza pura en cada sorbo!"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 <!-- Sección Hero: Slider de Imágenes -->

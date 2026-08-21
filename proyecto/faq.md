@@ -2,6 +2,7 @@
 layout: page
 title: "Preguntas Frecuentes"
 description: "Resolvemos las dudas más comunes sobre la Flor de Jamaica"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 <section class="page-hero">

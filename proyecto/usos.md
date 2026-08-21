@@ -2,6 +2,7 @@
 layout: page
 title: "Usos"
 description: "Aplicaciones gastronómicas, medicinales e industriales"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 Su versatilidad hace que la Flor de Jamaica sea un ingrediente valioso en múltiples ámbitos. Desde la cocina tradicional hasta la medicina herbal y la industria moderna, sus usos son prácticamente ilimitados.

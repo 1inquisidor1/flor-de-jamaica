@@ -1,7 +1,8 @@
 ---
 layout: page
 title: "Apariencia"
-description: "Descripción botánica detallada de la Flor de Jamaica"
+description: "Apariencia física de la Flor de Jamaica: forma, color, tamaño. Identificación visual de la flor Hibiscus sabdariffa"
+image: /assets/images/slider/campo-hibiscus.webp
 ---
 
 La flor de Jamaica (*Hibiscus sabdariffa*) es una planta que cautiva a primera vista, pero la parte que realmente la distingue y la que se consume no son sus pétalos, sino **el cáliz**, una estructura carnosa de un **rojo intenso y llamativo**.
